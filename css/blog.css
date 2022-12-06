@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: 'Raleway', sans-serif;  overflow-x: hidden; font-size: 14px;}
+ul {list-style-type: none; padding: 0; margin: 0;}
+a {text-decoration: none;}
+hr {color: #999;}
+del {color: #aaa;}
+::selection {background: tomato; color: #fff;}
+button {border: none; background: none;}
+section {padding: 20px 0;}
+.secTitle {color: #F57224; font-size: 30px; text-align: center; font-weight: bold; margin-bottom: 10px;}
+.blog_item {padding: 10px 0;}
+.blog_item a {color: #333; display: block; height: 100%; box-shadow: 0 0 10px #ddd;}
+.blog_item a:hover {box-shadow: none;}
+.blog_item a .title {font-weight: bold; padding: 10px;}
+.blog_item a .title:hover {color: #F57224;}
+.blog_item a img {width: 100%; margin-bottom: 10px;}
+
+            /* codes for topBar */
+#topBar {font-size: 25px; font-family: monospace; text-align: right; color: #2893c5;}
+
+            /* codes for header section */
+header {position: sticky; top: 0; left: 0; border-bottom: 1px solid #eee; background: #fff; z-index: 10; padding: 10px 0;}
+/* menu */
+header ul.menu {display: flex; padding: 0 10px; align-self: center;}
+header ul.menu li {font-size: 16px; padding: 0 10px; position: relative; font-weight: bold;}
+header ul.menu li:first-child {cursor: pointer; color: #2893c5;}
+header ul.menu li a {color: #2893c5;}
+header ul.menu li:hover, header ul.menu li a:hover {color: #F57224;}
+header ul.menu li ul.submenu {position: absolute; background: #fff; box-shadow: 0 0 10px #ddd; top: 180%; left: 0; width: 140px; padding: 5px 0; transform: scale(0); overflow: hidden; transition: all 0.3s; transform-origin: top left;}
+header ul.menu li:hover ul.submenu {transform: scale(1);}
+header ul.menu li ul.submenu li {padding: 5px 15px; cursor: auto; font-size: 14px; font-weight: normal;}
+header ul.menu li ul.submenu li a:hover {color: #F57224;}
+/* search bar */
+header .search_wrapper button.search_btn {margin-right: 10px; font-size: 16px; color: #F57224;}
+header .search_wrapper .search_box {background: #fff; width: 100%; height: 100%; left: 0; top: 0; position: absolute; display: flex; opacity: 0; overflow: hidden; transition: all 0.6s; transform: scale(0); transform-origin: left;}
+header .search_wrapper .search_box.show {opacity: 1; transform: scale(1);}
+header .search_wrapper .search_box input {height: 100%; width: 100%; background: none; border: none; outline: none; font-size: 20px; color: #F57224; padding: 0 20px;}
+header .search_wrapper .search_box input::placeholder {color: #F57224;}
+header .search_wrapper .search_box button {margin: 0 20px; font-size: 20px; color: #F57224;}
+/* side bar */
+header .sidebar_wrapper button.sidebar_btn {font-size: 16px; color: #F57224;}
+header .sidebar_wrapper .sidebar {position: fixed; width: 0; height: 100%; background: #00000090; top: 0; right: 0; transition: all 0.6s; overflow: hidden; display: flex; justify-content: space-between;}
+header .sidebar_wrapper .sidebar .blank {width: 100%; height: 100%;}
+header .sidebar_wrapper .sidebar .box {min-width: 350px; height: 100%; color: #fff; background: #111; padding: 20px;}
+header .sidebar_wrapper .sidebar .box a {display: flex; color: #C2FFF9; margin-bottom: 30px;}
+header .sidebar_wrapper .sidebar .box a:hover {color: #fff;}
+header .sidebar_wrapper .sidebar .box a img {width: 100px; padding: 5px;}
+header .sidebar_wrapper .sidebar .box a h6 {padding: 5px;}
+
+            /* codes for explore section */
+#explore .topbar {background: #f3f3f9; display: flex; margin-bottom: 20px;}
+#explore .topbar h6 {color: #fff; background: #F57224; padding: 15px 20px; margin: 0;}
+#explore .topbar a {color: #F57224; align-self: center; margin-left: 20px;}
+
+            /* codes for dual box section */
+#dual_box {background: #f8f8f8;}
+#dual_box .banner a {color: #fff; background: #00000090; position: absolute; bottom: 0; width: 100%; text-align: center; left: 0; padding: 10px; font-size: 20px;}
+#dual_box .banner a:hover {color: #F57224;}
+#dual_box .most_popular .blog_item a {display: flex; box-shadow: none;}
+#dual_box .most_popular .blog_item a img {width: 40%; height: 100%; align-self: center;}
+
+            /* codes for categories section */
+#categories {background: #f3f3f9;}
+#categories a {position: relative; display: block; padding: 15px 0;}
+#categories a img {width: 100%; height: 100%;}
+#categories a h5 {position: absolute; top: 40%; left: 50%; transform: translateX(-50%); color: #fff; background: #F57224; padding: 5px 20px; transition: all 0.3s; border-radius: 20px 0 20px 0;}
+#categories a:hover h5 {color: #F57224; background: #fff;}
+
+            /* codes for footer section */
+footer ul {display: flex;}
+footer ul li {padding-right: 15px;}
+footer ul li a {color: #C2FFF9; font-size: 22px;}
+footer ul li a:hover {color: #F57224;}
+
+            /* codes for responsive */
+/* for tablet */
+@media screen and (max-width: 768px) {
+ 
+header ul.menu li {font-size: 14px; padding: 0 9px;}
+    
+}

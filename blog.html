@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <title>Daraz Blog | Fashion , Tech & Product Review</title>
+            <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+            <!-- link -->
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/blog.css">
+            <!-- script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+        <!-- codes for topBar section -->
+<div id="topBar">
+    <div class="container">
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </div>
+            <script>
+                // time function
+                function showTime(){
+                    var date = new Date();
+                    var h = date.getHours(); // 0 - 23
+                    var m = date.getMinutes(); // 0 - 59
+                    var s = date.getSeconds(); // 0 - 59
+                    //var session = "AM";
+                    if(h == 0){
+                        h = 24;
+                    }
+                   /* if(h > 12){
+                        h = h - 12;
+                        session = "PM";
+                    }*/
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+                    var time = h + ":" + m + ":" + s /*+ " " + session*/;
+                    document.getElementById("MyClockDisplay").innerText = time;
+                    document.getElementById("MyClockDisplay").textContent = time;
+                    setTimeout(showTime, 1000);
+                }
+                showTime();
+            </script>
+</div>
+
+        <!-- codes for header section -->
+<header>
+    <div class="container d-flex justify-content-between">
+        <div class="d-flex">
+            <a href="index.html" class="logo"><img src="img/logo.svg" alt="Logo" width="150px"></a>
+            <ul class="menu">
+                <li>Discover
+                    <ul class="submenu">
+                        <li><a href="#">PHONE FINDER</a></li>
+                        <li><a href="#">FASHION</a></li>
+                        <li><a href="#">TECHNOLOGY</a></li>
+                        <li><a href="#">BEAUTY</a></li>
+                        <li><a href="#">HEALTH</a></li>
+                        <li><a href="#">FOOD</a></li>
+                        <li><a href="#">GROCERY</a></li>
+                        <li><a href="#">LIFESTYLE</a></li>
+                        <li><a href="#">TRAVEL</a></li>
+                        <li><a href="#">LIFE HACKS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Buying Guides</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="contact_us.html">Get In Touch With Us</a></li>
+                <li><a href="categories.html">Shop Now</a></li>
+            </ul>
+        </div>
+        <div class="d-flex align-self-center">
+            <!-- search bar -->
+            <div class="search_wrapper">
+                <button class="bi bi-search search_btn" onclick="document.querySelector('.search_box').classList.add('show');"></button>
+                <div class="search_box">
+                    <input type="text" name="search" id="search" placeholder="Type and hit enter to search . . .">
+                    <button class="bi bi-x-lg" onclick="document.querySelector('.search_box').classList.remove('show');"></button>
+                </div>
+            </div>
+            <!-- side bar -->
+            <div class="sidebar_wrapper">
+                <button class="bi bi-list sidebar_btn" onclick="document.querySelector('header .sidebar_wrapper .sidebar').style.width='100%';"></button>
+                <div class="sidebar">
+                    <div class="blank" onclick="document.querySelector('header .sidebar_wrapper .sidebar').style.width='0';"></div>
+                    <div class="box">
+                        <div class="text-end mb-3"><button class="bi bi-x-lg text-white h5" onclick="document.querySelector('header .sidebar_wrapper .sidebar').style.width='0';"></button></div>
+                        <h5 class="mb-4">Important Stories</h5>
+                        <a href="single_blog.html" class="blog_item">
+                            <img src="img/blog_page/ac.png" alt="blog">
+                            <h6>Top 6 Inverter ACs to Buy in Bangladesh (2022)!</h6>
+                        </a>
+                        <a href="single_blog.html" class="blog_item">
+                            <img src="img/blog_page/fan.jpg" alt="blog">
+                            <h6>কম দামে সবচেয়ে দূর্দান্ত সিলিং ফ্যান কিনুন দারাজে (২০২২)</h6>
+                        </a>
+                        <a href="single_blog.html" class="blog_item">
+                            <img src="img/blog_page/generator.jpg" alt="blog">
+                            <h6>Best Powerful Generators for Home in Bangladesh</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- codes for top read section -->
+<section id="top_read">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/ac.png" alt="Product">
+                    <h4 class="title">Top 6 Inverter ACs to Buy in Bangladesh (2022)!</h4>
+                </a>
+            </div>
+            <div class="col-6 ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/fan.jpg" alt="Product">
+                    <h4 class="title">কম দামে সবচেয়ে দূর্দান্ত সিলিং ফ্যান কিনুন দারাজে (২০২২)</h4>
+                </a>
+            </div>
+        </div>
+        <a href="index.html" class="d-block mt-4"><img src="img/blog_page/shop_now_banner.png" alt="banner" width="100%"></a>
+    </div>
+</section>
+
+        <!-- codes for explore section -->
+<section id="explore">
+    <div class="container">
+        <div class="topbar">
+            <h6>Explore</h6>
+            <a href="#">Reasons Why You Should Download the Daraz App Right Away</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/ac.png" alt="Product">
+                    <h5 class="title">কম দামে জনপ্রিয় ব্র্যান্ডের এসি খুঁজছেন? সবচেয়ে সেরা ৭ টি এসির মূল্য তালিকা দেখে নিন!</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 px-lg-1 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/tv.png" alt="Product">
+                    <h5 class="title">5 Best Smart TV Under 40,000 Taka in Bangladesh (2022)</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-7 mx-auto ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/refrigerator.png" alt="Product">
+                    <h5 class="title">Find The Best Refrigerator According to Your Taste & Budget (2022)</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for customer experience section -->
+<section id="cus_exp">
+    <div class="secTitle">Best Customer Experience</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/club_membership.png" alt="Product">
+                    <h5 class="title">Daraz Club Membership Program in 2022</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2  ps-md-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/collection_point.jpg" alt="Product">
+                    <h5 class="title">How To Select Daraz Collection Point Easily!</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2 pe-md-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/bkash_pay.jpg" alt="Product">
+                    <h5 class="title">How To Pay Daraz By bKash App (bKash Cashback Offer 2022 Updated)</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/collection_point_address.jpg" alt="Product">
+                    <h5 class="title">List of Daraz Collection Point Addresses (Updated 2022)</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for buying guide section -->
+<section id="buying_guide">
+    <div class="secTitle">Shop with Daraz Buying Guides</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/generator.jpg" alt="Product">
+                    <h5 class="title">Best Powerful Generators for Home in Bangladesh</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 px-lg-1 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/flower_vase.jpg" alt="Product">
+                    <h5 class="title">Elegant Face Flower Vase Designs</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-7 mx-auto ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/moisturizer.png" alt="Product">
+                    <h5 class="title">Best Moisturizers for Dry Skin in Bangladesh (2022)</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for dual box section -->
+<section id="dual_box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 py-2 pe-lg-3">
+                <div class="secTitle">Your Life, Your Style</div>
+                <div class="banner position-relative mb-4">
+                    <img src="img/categories/shampoo/banner.jpg" alt="banner" width="100%">
+                    <a href="single_blog.html">7 Best Women's Shampoo Brands in Bangladesh</a>
+                </div>
+                <div class="row">
+                    <div class="col-6 pe-3 blog_item">
+                        <a href="single_blog.html">
+                            <img src="img/blog_page/winter-fashion-for-women.jpg" alt="Product">
+                            <h6 class="title">Best Winter Fashion Trends for Ladies in 2022</h6>
+                        </a>
+                    </div>
+                    <div class="col-6 ps-3 blog_item">
+                        <a href="single_blog.html">
+                            <img src="img/blog_page/fashionable-umbrella-for-women.jpg" alt="Product">
+                            <h6 class="title">Exclusive & Trendy Designs of Ladie's Umbrellas in 2022</h6>
+                        </a>
+                    </div>
+                    <div class="col-6 pe-3 blog_item">
+                        <a href="single_blog.html">
+                            <img src="img/blog_page/best-body-lotion-for-dry-skin.jpg" alt="Product">
+                            <h6 class="title">Best Body Whitening Lotions & Creams in Winter</h6>
+                        </a>
+                    </div>
+                    <div class="col-6 ps-3 blog_item">
+                        <a href="single_blog.html">
+                            <img src="img/blog_page/daraz-fashion-week.png" alt="Product">
+                            <h6 class="title">Enjoy Best Fashion Deals on Daraz Fashion Week (2022)</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 ps-lg-3 most_popular">
+                <div class="secTitle fs-4">Most Popular Right Now</div>
+                <div class="blog_item">
+                    <a href="single_blog.html">
+                        <img src="img/blog_page/step-to-become-a-daras-seller.jpg" alt="Product">
+                        <h6 class="title">How to Become A Seller On Daraz Bangladesh?</h6>
+                    </a>
+                </div>
+                <div class="blog_item">
+                    <a href="single_blog.html">
+                        <img src="img/blog_page/step-to-become-a-daras-seller.jpg" alt="Product">
+                        <h6 class="title">How to Check Your Mobile SIM Number (Any Operator)</h6>
+                    </a>
+                </div>
+                <div class="blog_item">
+                    <a href="single_blog.html">
+                        <img src="img/blog_page/step-to-become-a-daras-seller.jpg" alt="Product">
+                        <h6 class="title">How to Earn Money Online in Bangladesh (2022 Guide)</h6>
+                    </a>
+                </div>
+                <div class="blog_item">
+                    <a href="single_blog.html">
+                        <img src="img/blog_page/step-to-become-a-daras-seller.jpg" alt="Product">
+                        <h6 class="title">Daraz Return Drop off Points (2022 Updated)</h6>
+                    </a>
+                </div>
+                <div class="blog_item">
+                    <a href="single_blog.html">
+                        <img src="img/blog_page/step-to-become-a-daras-seller.jpg" alt="Product">
+                        <h6 class="title">কিভাবে সহজে দারাজে পণ্য ফেরত দিয়ে টাকা রিফান্ড পাবেন?</h6>
+                    </a>
+                </div>
+                <div class="blog_item">
+                    <a href="single_blog.html">
+                        <img src="img/blog_page/step-to-become-a-daras-seller.jpg" alt="Product">
+                        <h6 class="title">দারাজে সেলার হওয়ার জন্য আপনার সম্পূর্ণ গাইড</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for sports section -->
+<section id="sports">
+    <div class="secTitle">Sports & Outdoor</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/BD-T20-WC-Squad.jpg" alt="Product">
+                    <h5 class="title">Bangladesh T20 World Cup Fixture, Match Schedule and Squad (2022)</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2  ps-md-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/CTH2_1920x1080_NoCTA.jpg" alt="Product">
+                    <h5 class="title">ICC Men's T20 World Cup Fixture 2022 - Find Match Schedule, Groups, and Squads!</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2 pe-md-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/Asia-Cup-Schedule.jpg" alt="Product">
+                    <h5 class="title">Asia Cup 2022 Schedule - Check Match Fixtures, Dates, Groups and Squad Details!</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/football-jersy-collection-in-bd.png" alt="Product">
+                    <h5 class="title">Official Football World Cup Jerseys in 2022</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for news section -->
+<section id="news">
+    <div class="secTitle">News</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/Daraz-New-Brand-Look.jpg" alt="Product">
+                    <h5 class="title">নতুন বছরে সাফল্যের ধারা অব্যাহত রাখার প্রত্যয়ে নতুন রূপে এলো দারাজ!</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2  ps-md-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/Daraz-New-Brand-Look.jpg" alt="Product">
+                    <h5 class="title">Daraz Unveils New Brand Look Moving Into Next Phase of Growth!</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2 pe-md-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/Get-Ready-for-Shop-and-Entertainment.png" alt="Product">
+                    <h5 class="title">Get Ready for Shopper-tainment with Daraz Live!</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/daraz-award.png" alt="Product">
+                    <h5 class="title">Daraz Named Number One Bangladeshi E-commerce Brand of 2021</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for daraz mart section -->
+<section id="dMart">
+    <div class="container">
+        <a href="categories.html"><img src="img/blog_page/dMart_banner.png" alt="banner" width="100%"></a>
+        <div class="secTitle mt-4">Get Inspired by Daraz Buying Guides</div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/dog-food-types.png" alt="Product">
+                    <h5 class="title">Different Types of Dog Food for Puppy & Adult Dogs</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 px-lg-1 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/buy-groceries-for-pooja.png" alt="Product">
+                    <h5 class="title">Essential Grocery Items for Pooja Festival</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-7 mx-auto ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/online-grocery-same-day-delivery.png" alt="Product">
+                    <h5 class="title">Shop Groceries from Daraz Mart & Get Same Day Delivery</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for information section -->
+<section id="information">
+    <div class="container">
+        <div class="secTitle mt-4">Information</div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 pe-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/how-to-prevent-pests.png" alt="Product">
+                    <h5 class="title">Tips to Keep Insects Away from Home Naturally; Methods of Pest Control</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 px-lg-1 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/e-sim.png" alt="Product">
+                    <h5 class="title">ই-সিম কী এবং বাংলাদেশে আপনার বর্তমান সিমকে কীভাবে ই-সিমে স্থানান্তর করবেন?</h5>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-7 mx-auto ps-3 blog_item">
+                <a href="single_blog.html">
+                    <img src="img/blog_page/migrate-to-esim-in-bd.png" alt="Product">
+                    <h5 class="title">What is eSIM & How to Migrate Your Current SIM to eSIM in Bangladesh?</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container my-5"><a href="categories.html"><img src="img/blog_page/dMall_banner.png" alt="banner" width="100%"></a></div>
+
+        <!-- codes for categories section -->
+<section id="categories">
+    <div class="secTitle">Discover more</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 pe-3">
+                <a href="categories.html">
+                    <img src="img/blog_page/Beauty.png" alt="category">
+                    <h5>BEAUTY</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2  ps-md-3">
+                <a href="categories.html">
+                    <img src="img/blog_page/Fashion.png" alt="category">
+                    <h5>FASHION</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-lg-2 pe-lg-2 pe-md-3">
+                <a href="categories.html">
+                    <img src="img/blog_page/LifeStyle.png" alt="category">
+                    <h5>LIFESTYLE</h5>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 ps-3">
+                <a href="categories.html">
+                    <img src="img/blog_page/Technology.png" alt="category">
+                    <h5>TECHNOLOGY</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container my-5"><a href="#"><img src="img/blog_page/app_download_banner.gif" alt="banner" width="100%"></a></div>
+
+        <!-- codes for footer section -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-3">
+                <img src="img/blog_page/daraz-logo-mint.png" alt="Logo" width="100%">
+            </div>
+            <div class="col-md-4 mx-auto">
+                <h5 class="fw-bold mb-3">Who We Are</h5>
+                <p>Daraz Life is a 'come-as-you-are' catalog where the worlds of fashion, lifestyle, mobile phones, technology, daraz live, daraz mart, daraz mall, and digital community meet.</p>
+                <p>Passing time? On a product-hunt? Just passing through? Regardless, we've got something for you! With Daraz.com.bd online shopping in Bangladesh has never been so easy.</p>
+            </div>
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">Connect</h5>
+                <ul>
+                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h5 class="text-center"><i class="bi bi-c-circle"></i> 2022 - <span style="color: #C2FFF9; font-weight: 500;">Daraz</span> | Design and Developed by <a href="https://facebook.com/j.shahinalam" target="_blank" style="color: #f57224; font-weight: 500;">Shahin Alam</a> </h5>
+    </div>
+</footer>
+
+</body>
+</html>

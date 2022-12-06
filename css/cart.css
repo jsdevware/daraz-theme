@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: 'Raleway', sans-serif;  overflow-x: hidden; font-size: 14px;}
+ul {list-style-type: none; padding: 0; margin: 0;}
+a {text-decoration: none;}
+hr {color: #999;}
+del {color: #aaa;}
+::selection {background: tomato; color: #fff;}
+button {border: none; background: none;}
+
+            /* codes for message box */
+#message_box_wrapper {position: fixed; bottom: 0; right: 5%; z-index: 5;}
+#message_box_wrapper .icon {background: #fff; padding: 10px 20px; font-size: 17px; box-shadow: 0 0 2px #0d7494; color: #0d7494;}
+#message_box_wrapper .message_box {background: #fff; position: absolute; bottom: 0; right: 0; width: 600px; height: 400px; box-shadow: 0 0 10px #ddd; display: none;}
+#message_box_wrapper .message_box h6 {padding: 10px 20px; border-bottom: 1px solid #eee; background: #fff;}
+#message_box_wrapper .message_box .left_box {width: 30%; float: left; background: #f3f3f9; height: 100%; border-right: 1px solid #eee;}
+#message_box_wrapper .message_box .left_box .chats {padding: 10px;}
+#message_box_wrapper .message_box .right_box {width: 70%; float: right;}
+#message_box_wrapper .message_box .right_box .chat_alert {padding: 0px 50px; text-align: center; padding-top: 15%;}
+#message_box_wrapper .message_box .right_box .chat_alert .bi-envelope-fill {font-size: 40px; color: #aaa; margin-bottom: 20px;}
+#message_box_wrapper .message_box .right_box .chat_alert a {color: #199CC4; text-decoration: underline;}
+#message_box_wrapper .message_box .right_box .chat_alert .reg a {color: #0d7494; text-decoration: none;}
+
+            /* codes for topBar */
+#topBar {background: #eee;}
+#topBar ul {display: flex; padding: 5px 0; justify-content: end;}
+#topBar ul li a {padding: 10px; color: tomato;}
+#topBar .app_banner {background: #f9f9f9; padding: 5px; justify-content: space-around; display: none;}
+#topBar .app_banner img {width: 30px; height: 30px; background: aqua; padding: 5px; border-radius: 5px; align-self: center;}
+#topBar .app_banner p {color: tomato; align-self: center; margin: 0; padding: 5px; font-size: 10px;}
+#topBar .app_banner a {background: tomato; color: #fff; padding: 5px 10px; border-radius: 20px; align-self: center; font-size: 10px;}
+
+            /* codes for mobile nav section */
+#mobile_nav {position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #F57224; display: none; justify-content: space-around; font-size: 20px; z-index: 15;}
+#mobile_nav .mobile_nav_item {color: #F57224; align-self: center; margin: 10px;}
+#mobile_nav .mobile_nav_active {font-size: 14px;box-shadow: 0 0 10px #bbb; padding: 5px 10px; border-radius: 10px;}
+            
+            /* codes for header section */
+header {background: #fff; position: sticky; left: 0; top: 0; box-shadow: 0 2px 5px #ddd; z-index: 10;}
+header .container {display: flex; justify-content: space-between;}
+header .header_logo {width: 150px; padding: 10px;}
+header .header_search_wrapper {display: flex; width: 60%; padding: 10px; align-self: center;}
+header .header_search_wrapper input {width: 100%; border: none; outline: none; background: #f5f5f5; padding: 10px;}
+header .header_search_wrapper .search_button {width: 40px; height: 40px; font-size: 18px; padding: 5px; text-align: center; background: #F57224; color: #fff; border-radius: 0 5px 5px 0;}
+header .cart_button {align-self: center; padding: 10px;}
+header .cart_button a {color: #333; font-size: 30px;}
+header .getApp {align-self: center; padding: 10px;}
+header .cat_btn {padding: 0 10px 10px;}
+/* category */
+header #category {background: #fff; width: 100px; height: auto; position: absolute; top: 100%; left: 10px; display: none;}
+header #category.show {display: block;}
+header #category ul {overflow: scroll; cursor: auto; height: 200px;}
+header #category ul::-webkit-scrollbar {display: none;}
+header #category .main_menu {height: 100%; position: relative; box-shadow: 0 0 5px #ddd;}
+header #category .main_menu ul li {padding: 10px; cursor: pointer;}
+header #category .main_menu ul li span {color: #F57224; transform: translateX(-10px); opacity: 0; transition: all 0.5s;}
+header #category .main_menu ul li:hover span {transform: translateX(0px); opacity: 1;}
+header #category .main_menu ul li:hover .sub_menu {display: block;}
+header #category .main_menu ul li .sub_menu {position: absolute; background: #fff; width: 100%; height: 100%; left: 100%; top: 0; box-shadow: 0 0 5px #ddd; display: none;}
+header #category .main_menu ul li .sub_menu ul li {cursor: pointer; font-size: 13px;}
+header #category .main_menu ul li .sub_menu ul li span {color: #F57224; transform: translateX(-10px); opacity: 0; transition: all 0.5s;}
+header #category .main_menu ul li .sub_menu ul li:hover span {transform: translateX(0px); opacity: 1;}
+header #category .main_menu ul li .sub_menu ul li:hover .links {display: block;}
+header #category .main_menu ul li .sub_menu ul li .links {position: absolute; background: #fff; width: 100%; height: 100%; left: 100%; top: 0; box-shadow: 0 0 5px #ddd; display: none;}
+header #category .main_menu ul li .sub_menu ul li .links ul li a {color: #333;}
+header #category .main_menu ul li .sub_menu ul li .links ul li a:hover {color: tomato;}
+
+            /* codes for cart section */
+#cart {padding: 25px 0;}
+#cart .title h2 {color: #0d7494; display: inline-block; margin: 0; padding: 0 10px; border-left: 4px solid #F57224; border-right: 4px solid #F57224;}
+#cart .cart_wrapper { padding: 20px 0;}
+#cart .cart_wrapper .productsOnCart {box-shadow: 0 0 10px #ddd; padding: 10px;}
+#cart .cart_wrapper .productsOnCart ul .empty {color: #F57224; text-align: center;}
+#cart .cart_wrapper .productsOnCart ul .empty a {color: #0d7494; font-size: 16px; border: 1px solid #0d7494; padding: 5px 10px; margin-top: 20px; display: inline-block; border-radius: 5px; transition: all 0.5s;}
+#cart .cart_wrapper .productsOnCart ul .empty a:hover {color: #fff; background: #0d7494;}
+#cart .cart_wrapper .productsOnCart ul li {display: flex; flex-wrap: nowrap; min-width: 100%; overflow: hidden; padding: 10px 0; border-bottom: 1px solid #eee;}
+#cart .cart_wrapper .productsOnCart ul li:last-child {border: none;}
+#cart .cart_wrapper .productsOnCart ul li img {width: 100px; height: 100px; align-self: center;}
+#cart .cart_wrapper .productsOnCart ul li .desc {display: flex; flex-wrap: wrap; padding-left: 20px; align-self: center;}
+#cart .cart_wrapper .productsOnCart ul li .desc h5 {width: 100%; height: 25px; overflow: hidden; color: #777;}
+#cart .cart_wrapper .productsOnCart ul li .desc h6 {color: #F57224; font-size: 20px; margin: 0 30px; align-self: center;}
+#cart .cart_wrapper .productsOnCart ul li .counting {font-size: 18px; align-self: center; margin-left: 10px; display: flex; justify-content: space-between;}
+#cart .cart_wrapper .productsOnCart ul li .counting span {margin: 0 10px; align-self: center; color: #199CC4;}
+#cart .cart_wrapper .productsOnCart ul li .counting button {font-size: 25px; align-self: center;}
+/* checkout */
+#cart .checkout_wrapper {padding: 20px; margin: 20px 0; box-shadow: 0 0 10px #ddd; color: #666;}
+#cart .checkout_wrapper .top {text-align: center; color: #0d7494;}
+#cart .checkout_wrapper h5 span {color: #F57224;}
+#cart .checkout_wrapper h5.total_amount {text-align: right;}
+#cart .checkout_wrapper a.checkout_btn {color: #F57224; font-size: 16px; border: 1px solid #F57224; padding: 5px 10px; border-radius: 5px; transition: all 0.5s; margin-top: 20px; display: inline-block;}
+#cart .checkout_wrapper a.checkout_btn:hover {background: #F57224; color: #fff;}
+
+            /* codes for footer section */
+/* footer links */
+#footer_links {background: #2E2E54; padding: 25px 0; color: #fff;}
+#footer_links a {color: #f2f2f2;}
+#footer_links a:hover {text-decoration: underline;}
+#footer_links .app_download {margin-top: 20px;}
+#footer_links .app_download img.qr_for_app {width: 120px; border-radius: 5px; float: left; margin-right: 20px;}
+#footer_links .app_download .item {color: #F57224; margin-top: 20px;}
+#footer_links .app_download .item img {width: 40px; padding: 5px; background: aqua;border-radius: 5px; margin-bottom: 10px;}
+#footer_links .app_download ul {display: flex; margin-top: 20px;}
+#footer_links .app_download ul li {width: 25%; padding-right: 20px;}
+/* footer payments */
+#footer_payments {background: #fff; padding: 20px 0;}
+#footer_payments h5 {margin-bottom: 20px;}
+#footer_payments ul {display: flex;}
+#footer_payments ul li {padding-right: 15px;}
+#footer_payments ul li a {color: #F57224; font-size: 25px;}
+
+            /* codes for responsive */
+/* for tablet */
+@media screen and (max-width: 768px) {
+ 
+#topBar ul {display: none;}
+#topBar .app_banner {display: flex;}
+header .getApp {display: none;}
+    
+}
+
+@media screen and (max-width: 600px) {
+ 
+#message_box_wrapper {display: none;}
+#mobile_nav {display: flex;}
+    
+}

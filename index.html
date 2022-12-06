@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <title>Daraz | Online Shopping in Bangladesh</title>
+            <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+            <!-- link -->
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+            <!-- script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+      <!-- codes for alert box -->
+<div id="alert_box">
+  <div class="alerts">
+    <img src="img/alert-box-avatar.png" width="60px" height="60px">
+    <div class="text">
+      <b>Daz wants to be friends with you</b>
+      <p>Become friends with Daz to be the first one to know about exclusive deals and discounts.</p>
+    </div>
+  </div>
+  <div class="buttons">
+    <button onclick="document.querySelector('#alert_box').classList.add('hide')">Not Intersted</button>
+    <button onclick='alert("You are now Daz`s Friend"); document.querySelector("#alert_box").classList.add("hide")'>Be Friends</button>
+  </div>
+</div>
+
+      <!-- codes for message box -->
+<div id="message_box_wrapper">
+  <button class="icon bi bi-chat-right-dots" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='block';"> Messages</button>
+  <div class="message_box">
+    <div class="left_box">
+      <h6 class="text-muted"><i class="bi bi-chat-right-dots"></i> Messages</h6>
+      <div class="chats">
+       <span>No chats for you</span>
+      </div>
+    </div>
+    <div class="right_box">
+      <h6>Daraz <button class="float-end bi bi-x-lg" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='none';"></button></h6>
+      <div class="chat_alert">
+        <div class="bi bi-envelope-fill"></div>
+        <a href="#">Use the App for exclusive offers!</a>
+        <p>Once you start a new conversation, you'll see it listed here.</p>
+        <div class="reg">
+          <a href="login.html">Login</a> / <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- codes for topBar section -->
+<div id="topBar">
+  <div class="be_seller_banner" style="background: #FF4400;">
+    <div class="container position-relative">
+      <img src="img/be_seller_banner.gif" alt="Banner" width="100%">
+      <button class="bi bi-x-lg" style="position: absolute; right: 5px; top: 5px; font-size: 16px; color: #fff;" onclick="document.querySelector('#topBar .be_seller_banner').style.display='none';"></button>
+    </div>
+  </div>
+  <div class="container">
+    <ul>
+      <li><a href="#">SAVE MORE ON APP</a></li>
+      <li><a href="#">SELL ON DARAZ</a></li>
+      <li><a href="#">CUSTOMER CARE</a></li>
+      <li><a href="#">TRACK MY ORDER</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li><a href="#">DARAZ AFFILIATE PROGRAM</a></li>
+      <li><a href="javascript:void(0)">ভাষা</a></li>
+    </ul>
+  </div>
+      <!-- app banner -->
+  <div class="app_banner">
+    <img src="img/fav.png" alt="logo">
+    <p>অ্যাপে প্রথম অর্ডারে আকর্ষণীয় ভাউচার  <br>  ডাউনলোড করুন দারাজ অ্যাপ</p>
+    <a href="javascript:void(0)">ডাউনলোড করুন</a>
+  </div>
+</div>
+
+      <!-- codes for mobile nav section -->
+<div id="mobile_nav">
+  <a href="index.html" class="mobile_nav_item mobile_nav_active"><i class="bi bi-house-door-fill"></i> <span>Home</span></a>
+  <a href="categories.html" class="mobile_nav_item"><i class="bi bi-grid"></i></a>
+  <a href="cart.html" class="mobile_nav_item"><i class="bi bi-bag-heart"></i></a>
+  <a href="login.html" class="mobile_nav_item"><i class="bi bi-person"></i></a>
+</div>
+
+      <!-- codes for header section -->
+<header>
+  <div class="container">
+    <a href="index.html" class="header_logo"><img src="img/logo.svg" alt="Logo" width="100%"></a>
+    <div class="header_search_wrapper">
+      <input type="search" name="search_product" id="search_product" placeholder="Search in Daraz">
+      <div class="search_button" onclick="product_search()"><i class="bi bi-search"></i></div>
+    </div>
+    <div class="cart_button" title="Cart">
+      <span class="cart_quantity"></span>
+      <a href="cart.html" class="bi bi-cart3"></a>
+    </div>
+    <a href="javascript:void(0)" class="getApp"> <img src="img/app_banner.png" alt="App Banner" width="180px"> </a>
+  </div>
+  <div class="container"><button class="cat_btn" onclick="document.querySelector('#cate_banner #category').classList.toggle('show');  document.querySelector('header .cat_btn span').classList.toggle('bi-chevron-up');">Category <span class="bi bi-chevron-down ms-1"></span></button></div>
+      <script>
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 500) {
+          $('header').addClass('sticky_header');
+          $('#cate_banner #category').addClass('sticky');
+          } else {
+              $('header').removeClass('sticky_header');
+              $('#cate_banner #category').removeClass('sticky');
+          }
+        });
+      </script>
+</header>
+
+<div id="cate_banner">
+  <div class="container">
+      <!-- category section -->
+    <div id="category">
+      <div class="main_menu">
+        <ul>
+          <li>Menu 1  <span class="float-end bi bi-chevron-right"></span>
+              <!-- Submenu -->
+            <div class="sub_menu">
+              <ul>
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 8</a></li>
+                      <li><a href="#">Link 8</a></li>
+                      <li><a href="#">Link 8</a></li>
+                      <li><a href="#">Link 8</a></li>
+                      <li><a href="#">Link 8</a></li>
+                      <li><a href="#">Link 8</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+              </ul>
+            </div> <!-- end Submenu -->
+          </li>
+          
+          <li>Menu 2  <span class="float-end bi bi-chevron-right"></span>
+              <!-- Submenu -->
+            <div class="sub_menu">
+              <ul>
+                <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+              </ul>
+            </div> <!-- end Submenu -->
+          </li>
+          
+          <li>Menu 3  <span class="float-end bi bi-chevron-right"></span>
+              <!-- Submenu -->
+            <div class="sub_menu">
+              <ul>
+                <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+              </ul>
+            </div> <!-- end Submenu -->
+          </li>
+          
+          <li>Menu 4  <span class="float-end bi bi-chevron-right"></span>
+              <!-- Submenu -->
+            <div class="sub_menu">
+              <ul>
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      <li><a href="#">Link 5</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                      <li><a href="#">Link 6</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                      <li><a href="#">Link 7</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+              </ul>
+            </div> <!-- end Submenu -->
+          </li>
+          
+          <li>Menu 5  <span class="float-end bi bi-chevron-right"></span>
+              <!-- Submenu -->
+            <div class="sub_menu">
+              <ul>
+                <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 1</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 2</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 3</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+                
+                <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                    <!-- links -->
+                  <div class="links">
+                    <ul>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 4</a></li>
+                    </ul>
+                  </div> <!-- end links -->
+                </li>
+              </ul>
+            </div> <!-- end Submenu -->
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      <!-- banner section -->
+    <div id="banner">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
+  
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="#" title="See Details"><img src="img/banner/banner-1.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#" title="See Details"><img src="img/banner/banner-2.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#" title="See Details"><img src="img/banner/banner-3.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#" title="See Details"><img src="img/banner/banner-4.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#" title="See Details"><img src="img/banner/banner-5.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#" title="See Details"><img src="img/banner/banner-6.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#" title="See Details"><img src="img/banner/banner-7.jpg" class="d-block w-100" alt="banner"></a>
+          </div>
+        </div>
+            <!-- change button -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="bi bi-chevron-left" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="bi bi-chevron-right" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- codes for quick shop section -->
+<section id="quick_shop">
+  <div class="container">
+    <a href="#"><img src="img/shop_now_banner.gif" alt="banner" width="100%"></a>
+    <div class="cate_links">
+      <a href="categories.html">
+        <img src="img/cate_link-1.jpg" alt="category">
+        <span>Mart</span>
+        <i class="bi bi-chevron-right"></i>
+      </a>
+      <a href="categories.html">
+        <img src="img/cate_link-2.jpg" alt="category">
+        <span>Fashion</span>
+        <i class="bi bi-chevron-right"></i>
+      </a>
+      <a href="categories.html">
+        <img src="img/cate_link-3.jpg" alt="category">
+        <span>Beauty & Glamour</span>
+        <i class="bi bi-chevron-right"></i>
+      </a>
+      <a href="categories.html">
+        <img src="img/cate_link-4.jpg" alt="category">
+        <span>Home & Living</span>
+        <i class="bi bi-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+      <!-- codes for flash sale section -->
+<section id="flash_sale">
+  <div class="container">
+    <h4>Flash Sale</h4>
+    <!-- counter -->
+    <div class="counter_wrapper">
+      <span class="title">On Sale</span>
+      <div class="counter">
+        <span class="text-muted align-self-center">Ending in :</span>
+        <div class="counterDown">
+          <div class="item"><span class="days" ></span></div>
+          <div class="item"><span class="hours" ></span></div>
+          <div class="item"><span class="minutes" ></span></div>
+          <div class="item"><span class="seconds" ></span></div>
+        </div>
+      </div>
+      <a href="flash_sale.html">SHOP MORE</a>
+
+              <script type="text/javascript">
+                // codes for countdown
+                let day = document.querySelector('.days')
+                let hour = document.querySelector('.hours')
+                let minute = document.querySelector('.minutes')
+                let second = document.querySelector('.seconds')
+                let mainBox = document.querySelector('.counterDown')
+              
+                setInterval(function(){
+                  let UpcomingDate = new Date('30 december 2022 11:59:00 PM');
+                  let NowDate = new Date();
+                  let differanceTime  = Math.floor((UpcomingDate-NowDate)/1000)
+                  let differanceDay = Math.floor(differanceTime/60/60/24)
+                  let differanceHour = Math.floor((differanceTime/60/60)%24)
+                  let differanceMinute = Math.floor((differanceTime/60)%60)
+                  let differanceSecound = Math.floor(differanceTime%60)
+              
+                  if(differanceDay >= 0){
+                    mainBox.style.display = "block";
+                    day.innerHTML =  differanceDay;
+                    hour.innerHTML =  differanceHour;
+                    minute.innerHTML =differanceMinute;
+                    second.innerHTML = differanceSecound;   
+                  }
+                })
+              </script>
+    </div>
+    <div class="product_wrapper">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 p-1">
+          <a href="product-details.html">
+            <img src="img/flash_sale/product-1.jpg" alt="Earphones" width="100%" height="200px">
+            <div class="p-2">
+              <div class="desc"><span>Realme Buds Wired Earphones with Mic Buds...</span></div>
+              <div class="price">৳78</div>
+              <div><del>৳250</del> <span class="ms-2">-68%</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 p-1">
+          <a href="product-details.html">
+            <img src="img/flash_sale/product-2.jpg" alt="Earphones" width="100%" height="200px">
+            <div class="p-2">
+              <div class="desc"><span>Wire Control Headset for Smartphone 3.5mm in ear...</span></div>
+              <div class="price">৳97</div>
+              <div><del>৳250</del> <span class="ms-2">-61%</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 p-1">
+          <a href="product-details.html">
+            <img src="img/flash_sale/product-3.jpg" alt="Honey" width="100%" height="200px">
+            <div class="p-2">
+              <div class="desc"><span>Pure and Chemical Free 1kg Honey Combo Pack</span></div>
+              <div class="price">৳383</div>
+              <div><del>৳800</del> <span class="ms-2">-52%</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 p-1">
+          <a href="product-details.html">
+            <img src="img/flash_sale/product-4.jpg" alt="Cotton Bra" width="100%" height="200px">
+            <div class="p-2">
+              <div class="desc"><span>Cotton Bra Boil Fabrics Multi Color 1 Piece</span></div>
+              <div class="price">৳36</div>
+              <div><del>৳100</del> <span class="ms-2">-64%</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 p-1">
+          <a href="product-details.html">
+            <img src="img/flash_sale/product-5.jpg" alt="Earphones" width="100%" height="200px">
+            <div class="p-2">
+              <div class="desc"><span>Magnetic Sports Headsets Stereo Music Earbuds...</span></div>
+              <div class="price">৳105</div>
+              <div><del>৳390</del> <span class="ms-2">-73%</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 p-1">
+          <a href="product-details.html">
+            <img src="img/flash_sale/product-6.jpg" alt="Boxer Underwear" width="100%" height="200px">
+            <div class="p-2">
+              <div class="desc"><span>3 Pieces Cotton Boxer Underwear for Man-box</span></div>
+              <div class="price">৳166</div>
+              <div><del>৳600</del> <span class="ms-2">-72%</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- codes for categories section -->
+<section id="sec_categories">
+  <div class="container">
+    <h4>Categories</h4>
+    <ul>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/1.jpg" alt="category">
+          <span>Hair Removal</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/2.jpg" alt="category">
+          <span>Electrical Safety</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/3.jpg" alt="category">
+          <span>Gates & Doorways</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/4.jpg" alt="category">
+          <span>Batteries</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/5.jpg" alt="category">
+          <span>Mobiles</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/6.jpg" alt="category">
+          <span>Cleaning Producs</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/7.jpg" alt="category">
+          <span>Hotel & Travel</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/8.jpg" alt="category">
+          <span>Strollers</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/9.jpg" alt="category">
+          <span>Camera Screen Protector</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/10.jpg" alt="category">
+          <span>Highlighters & Markers</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/11.jpg" alt="category">
+          <span>Correction Liquid & Pens</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/12.jpg" alt="category">
+          <span>Robes & Bodysuits</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/13.jpg" alt="category">
+          <span>Lingerie Sets</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/14.jpg" alt="category">
+          <span>Bicycle Accessories</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/15.jpg" alt="category">
+          <span>Microphones</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html">
+          <img src="img/categories/16.jpg" alt="category">
+          <span>Toilet Roll Holders</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <!-- codes for just for you section -->
+<section id="just4u">
+  <div class="container">
+    <h4>Just For You</h4>
+    <div class="row">
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/1.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Forget Full Sleeve T-Shirt For Men</span></div>
+              <div class="price">৳105</div>
+              <span><del>৳250</del> <span class="ms-2">-58%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <span>(517)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/2.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Fashionable Polarized driving Sport Square Sun...</span></div>
+              <div class="price">৳210</div>
+              <span><del>৳800</del> <span class="ms-2">-74%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <span>(576)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/3.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Fashion Mens Car Wheel Watches Luxury Men...</span></div>
+              <div class="price">৳664</div>
+              <span><del>৳678</del> <span class="ms-2">-02%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <span>(11)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/4.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Men's Fashionable Full Sleeves Grey Hoodies & Fu...</span></div>
+              <div class="price">৳650</div>
+              <span><del>৳1200</del> <span class="ms-2">-46%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <span>(8)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/5.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Pocket Lungi - SR Basundhora Lungi</span></div>
+              <div class="price">৳360</div>
+              <span><del>৳499</del> <span class="ms-2">-28%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <span>(33)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/6.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Men's Stylish Artificial Leather Wallet Money bag</span></div>
+              <div class="price">৳84</div>
+              <span><del>৳199</del> <span class="ms-2">-58%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <span>(182)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/7.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Huadelai- TWIN HORN 3.5mm Super Bass Stereo...</span></div>
+              <div class="price">৳105</div>
+              <span><del>৳250</del> <span class="ms-2">-58%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <span>(517)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/8.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Men Cotton Casual Dotted Shirt</span></div>
+              <div class="price">৳199</div>
+              <span style="padding: 1px;"></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <span>(4)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/9.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>3.5mm Wired Earphone Cartoon Cute Rabbit Wired Headset</span></div>
+              <div class="price">৳355</div>
+              <span><del>৳676</del> <span class="ms-2">-38%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <span>(9)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/10.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Sim Eject Pin Tool</span></div>
+              <div class="price">৳12</div>
+              <span><del>৳16</del> <span class="ms-2">-25%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <span>(34)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/11.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>Kitchen Stainless Steel Fruit Lemon Orange Citrus Hand Press</span></div>
+              <div class="price">৳93</div>
+              <span><del>৳150</del> <span class="ms-2">-38%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <span>(190)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 p-2">
+        <div class="item">
+          <a href="product-details.html">
+            <img src="img/just4u/12.jpg" alt="product">
+            <div class="text">
+              <div class="desc"><span>High Quality Sneakers for Men Casual Shoes Men Fashion</span></div>
+              <div class="price">৳289</div>
+              <span><del>৳1200</del> <span class="ms-2">-76%</span></span>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <span>(45)</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-4"><button class="load_more">LOAD MORE</button></div>
+  </div>
+</section>
+
+      <!-- codes for footer section -->
+<footer>
+  <!-- footer links -->
+  <div id="footer_links">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <h5>Customer Care</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">How to Buy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+          </ul>
+          <h5 class="mt-4">Earn With Daraz</h5>
+          <ul>
+            <li><a href="#">Daraz University</a></li>
+            <li><a href="#">Sell on Daraz</a></li>
+            <li><a href="#">Code of Conduct</a></li>
+            <li><a href="#">Join the Daraz Affilite Program</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Daraz</h5>
+          <ul>
+            <li><a href="about_us.html">About Daraz</a></li>
+            <li><a href="#">Digital Payments</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blog.html">Daraz Blog</a></li>
+            <li><a href="#">Daraz Cares</a></li>
+            <li><a href="#">dMart</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Daraz App</a></li>
+            <li><a href="#">Daraz Exclusive</a></li>
+            <li><a href="#">Hungrynaki Food Delivery</a></li>
+            <li><a href="#">BD Cricket Live</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-6 app_download">
+          <img src="img/daraz_app_download_qr_code.png" alt="QR Code" class="qr_for_app">
+          <div class="item">
+            <img src="img/fav.png" alt="logo">
+            <h6>Happy Shopping</h6>
+            <h6 class="text-white">Download App</h6>
+          </div>
+          <ul>
+            <li><a href="#"><img src="img/app_download_google_play.png" alt="Google Play" width="100%"></a></li>
+            <li><a href="#"><img src="img/app_download_app_store.png" alt="App Store" width="100%"></a></li>
+            <li><a href="#"><img src="img/app_download_app_gallery.png" alt="App Gallery" width="100%"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer payments -->
+  <div id="footer_payments">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Payment Methods</h5>
+          <img src="img/payment_gateway.png" alt="payment gateway" width="90%">
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Daraz International</h5>
+          <img src="img/flags.png" alt="International Marketplace" width="70%">
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Follow Us</h5>
+          <ul>
+            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Verified by</h5>
+          <img src="img/pci_dss_logo.png" alt="pci dss logo" width="50%">
+        </div>
+      </div>
+      <h5><i class="bi bi-c-circle"></i> 2022 - <span style="color: #19B2D7; font-weight: 500;">Daraz</span> | Design and Developed by <a href="https://facebook.com/j.shahinalam" target="_blank" style="color: #f57224; font-weight: 500;">Shahin Alam</a></h5>
+    </div>
+  </div>
+  <!-- footer blogs -->
+  <div id="footer_about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Experience Personalized Online Shopping in Bangladesh with Daraz.com.bd</h5>
+          <p>Online Shopping BD has never been easier. Daraz.com.bd is best online shopping store in Bangladesh that features 10+ million products at affordable prices. As bangaldesh's online shopping landscape is expanding every year, online shopping in dhaka, chittagong, khulna, sylhet and other big cities are also gaining momentum. Daraz is among best websites for online shopping in bangladesh that promises fast, reliable and convenient delivery of products to your doorstep. Daraz being the trusted online shop in Bangladesh aims to provide a trouble-free shopping experience for the people of Bangladesh but is also providing ample opportunity for international online shopping from Bangladesh. Daraz aims to make online shopping accessible to all parts of the country.</p>
+          <p>Everyone is encouraged to shop with confidence at Daraz.com.bd as our strict buyer’s protection policies ensure no risks while shopping online.</p>
+          <p>Among tons of online stores in Bangladesh, Daraz aims to strictly adhere to international quality standards ensuring trust and reliability in customer service and originality in product delivery. Realizing the surge in ecommerce platform in bangladesh, Daraz aims to redefine</p>
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <p>online shopping experience with home delivery, cash on delivery and installment facility for shoppers across country. Our assortment includes 100% original products from leading electronics, fashion, beauty, and lifestyle brands. Especially for shoppers who do not have debit cards or credit cards, Daraz provides a facility of online shopping with cash on delivery to your home. To enhance your online shopping experience, we encourage you to download <a href="#">Daraz app</a> for Android & IOS and have a taste of personalized shopping experience based on your interest and shopping needs. You can also check <a href="#">Daraz online shopping</a> videos on YouTube to have a clear idea.</p>
+          <p>Daraz is a global online marketplace with ecommerce stores in <a href="#">Pakistan</a>, Bangladesh, <a href="#">Nepal</a>, <a href="#">Sri Lanka</a> and <a href="#">Myanmar</a>.</p>
+
+          <h5>Trending</h5>
+          <p><a href="#">Valentine's Day Sale</a> , <a href="#">Daraz Flash Sale</a> , <a href="#">Grand Eid Fest</a> , <a href="#">Electronics Week Sale</a> , <a href="#">Deals Under 999</a> , <a href="#">Top Up & eStore</a> , <a href="#">10.10 Sale</a> , <a href="#">11.11 Sale</a> , <a href="#">Fatafati Friday</a> , <a href="#">12.12 Sale</a> , <a href="#">Daraz EMI Partners</a> , <a href="#">Daraz Payment Partners</a> , <a href="#">Daraz Mall</a> , <a href="#">Online Grocery Shop</a> , <a href="#">Mega Deals</a> , <a href="#">Daraz Voucher</a> , <a href="#">Gorur Haat</a> , <a href="#">Anniversary Sale</a> , <a href="#">Hot Deals</a> , <a href="#">Happy Hour</a> , <a href="#">bKash Offers</a> , <a href="#">Shake Shake</a> , <a href="#">BD Cricket Live</a> , <a href="#">Big Home Makeover</a> , <a href="#">Bengali New Year Sale</a> , <a href="#">Ramadan Bazar</a> , <a href="#">Eid Shopping Fest</a> , <a href="#">Online Bill Payment</a> , <a href="#">Online Air Ticket</a> , <a href="#">Daraz Mall Fest</a> , <a href="#">Daraz Shopamania Sale</a> , <a href="#">Daraz Cares</a> , <a href="#">Daraz Becho Bacho</a> , <a href="#">BD T20 World Cup Jersey</a></p>
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Top Categories & Brands</h5>
+          <h6>Mobile Phones</h6>
+          <p><a href="#">Xiaomi Mobile</a> , <a href="#">Samsung Mobile</a> , <a href="#">Huawei Mobile</a> , <a href="#">Symphony Mobile</a> , <a href="#">Nokia Mobile</a> , <a href="#">OnePlus Mobile</a> , <a href="#">Realme Mobile</a> , <a href="#">Infinix Mobile</a> , <a href="#">Oppo Mobile</a> , <a href="#">Vivo Mobile</a></p>
+
+          <h6>Mobile Accessories</h6>
+          <p><a href="#">Earphone</a>, <a href="#">Phone Cover</a>, <a href="#">Mobile Charger</a>, <a href="#">Mobile Battery</a>, <a href="#">Power Bank</a>, <a href="#">Memory Card</a>, <a href="#">Smart Watch</a></p>
+
+          <h6>Laptops</h6>
+          <p><a href="#">HP Laptops</a>, <a href="#">Dell Laptops</a>, <a href="#">Asus Laptops</a>, <a href="#">Lenovo Laptops</a>, <a href="#">Graphics Card</a></p>
+
+          <h6>LED TV</h6>
+          <p><a href="#">Sony Led TV</a>, <a href="#">Samsung Led TV</a>, <a href="#">LG Led TV</a>, <a href="#">Singer Led TV</a>, <a href="#">17 Inch LED TV</a>, <a href="#">19 Inch LED TV</a>, <a href="#">21 Inch LED TV</a>, <a href="#">24 Inch LED TV</a>, <a href="#">28 Inch LED TV</a>, <a href="#">32 Inch LED TV</a>, <a href="#">40 Inch LED TV</a>, <a href="#">42 Inch LED TV</a>, <a href="#">48 Inch LED TV</a>, <a href="#">50 Inch LED TV</a>, <a href="#">55 Inch LED TV</a></p>
+
+          <h6>Home Appliances</h6>
+          <p><a href="#">Air Conditioners</a>, <a href="#">Refrigerators</a>, <a href="#">Deep Freezers</a>, <a href="#">Generators</a>, <a href="#">UPS Battery</a>, <a href="#">Washing Machines</a>, <a href="#">Heaters</a>, <a href="#">Solar Panel</a>, <a href="#">Lenovo HE05 Earphone</a>, <a href="#">DSLR Cameras</a>, <a href="#">Air Cooler</a>, <a href="#">Microwave Oven</a>, <a href="#">Water Filters</a></p>
+
+          <h6>Fans</h6>
+          <p><a href="#">Click Fan</a>, <a href="#">Mira Fan</a>, <a href="#">Baseus Fan</a>, <a href="#">BRB Fan</a>, <a href="#">Defender Fan</a>, <a href="#">National fan</a>, <a href="#">Sony Fan</a>, <a href="#">Sunca Fan</a>, <a href="#">Orient Fan</a>, <a href="#">Superstar Fan</a>, <a href="#">Havells Fan</a>, <a href="#">Conion Fan</a>, <a href="#">Kashmir Fan</a></p>
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h6>Bikes</h6>
+          <p><a href="#">HP Laptops</a>, <a href="#">Dell Laptops</a>, <a href="#">Asus Laptops</a>, <a href="#">Lenovo Laptops</a>, <a href="#">Graphics Card</a></p>
+
+          <h6>Medicines</h6>
+          <p><a href="#">Earphone</a>, <a href="#">Phone Cover</a>, <a href="#">Mobile Charger</a>, <a href="#">Mobile Battery</a>, <a href="#">Power Bank</a>, <a href="#">Memory Card</a>, <a href="#">Smart Watch</a></p>
+
+          <h6>Trending Walton Products</h6>
+          <p><a href="#">Xiaomi Mobile</a> , <a href="#">Samsung Mobile</a> , <a href="#">Huawei Mobile</a> , <a href="#">Symphony Mobile</a> , <a href="#">Nokia Mobile</a> , <a href="#">OnePlus Mobile</a> , <a href="#">Realme Mobile</a> , <a href="#">Infinix Mobile</a> , <a href="#">Oppo Mobile</a> , <a href="#">Vivo Mobile</a></p>
+
+          <h6>Popular Stores</h6>
+          <p><a href="#">Air Conditioners</a>, <a href="#">Refrigerators</a>, <a href="#">Deep Freezers</a>, <a href="#">Generators</a>, <a href="#">UPS Battery</a>, <a href="#">Washing Machines</a>, <a href="#">Heaters</a>, <a href="#">Solar Panel</a>, <a href="#">Lenovo HE05 Earphone</a>, <a href="#">DSLR Cameras</a>, <a href="#">Air Cooler</a>, <a href="#">Microwave Oven</a>, <a href="#">Water Filters</a></p>
+
+          <h6>Trending Now</h6>
+          <p><a href="#">Click Fan</a>, <a href="#">Mira Fan</a>, <a href="#">Baseus Fan</a>, <a href="#">BRB Fan</a>, <a href="#">Defender Fan</a>, <a href="#">National fan</a>, <a href="#">Sony Fan</a>, <a href="#">Sunca Fan</a>, <a href="#">Orient Fan</a>, <a href="#">Superstar Fan</a>, <a href="#">Havells Fan</a>, <a href="#">Conion Fan</a>, <a href="#">Kashmir Fan</a></p>
+
+          <h6>Top Searches</h6>
+          <p><a href="#">Sony Led TV</a>, <a href="#">Samsung Led TV</a>, <a href="#">LG Led TV</a>, <a href="#">Singer Led TV</a>, <a href="#">17 Inch LED TV</a>, <a href="#">19 Inch LED TV</a>, <a href="#">21 Inch LED TV</a>, <a href="#">24 Inch LED TV</a>, <a href="#">28 Inch LED TV</a>, <a href="#">32 Inch LED TV</a>, <a href="#">40 Inch LED TV</a>, <a href="#">42 Inch LED TV</a>, <a href="#">48 Inch LED TV</a>, <a href="#">50 Inch LED TV</a>, <a href="#">55 Inch LED TV</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

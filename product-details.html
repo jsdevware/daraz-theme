@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <title>Product Details | Daraz</title>
+            <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+            <!-- link -->
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/product_details.css">
+            <!-- script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slide-to-submit.js"></script>
+</head>
+<body>
+      <!-- codes for message box -->
+<div id="message_box_wrapper">
+  <button class="icon bi bi-chat-right-dots" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='block';"> Messages</button>
+  <div class="message_box">
+    <div class="left_box">
+      <h6 class="text-muted"><i class="bi bi-chat-right-dots"></i> Messages</h6>
+      <div class="chats">
+       <span>No chats for you</span>
+      </div>
+    </div>
+    <div class="right_box">
+      <h6>Daraz <button class="float-end bi bi-x-lg" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='none';"></button></h6>
+      <div class="chat_alert">
+        <div class="bi bi-envelope-fill"></div>
+        <a href="#">Use the App for exclusive offers!</a>
+        <p>Once you start a new conversation, you'll see it listed here.</p>
+        <div class="reg">
+          <a href="login.html">Login</a> / <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- codes for login popup section -->
+<div id="login_modal">
+    <div class="modal_box">
+        <h5>Welcome to Daraz! Please login. <span title="Close" class="float-end bi bi-x-lg btn p-0" onclick="document.querySelector('#login_modal').style.display='none';"></span></h5>
+        <span>New member? <a href="#">Register</a> here.</span>
+        <div class="login_box">
+            <form action="" id="login_form">
+                <div class="row">
+                <!-- input boxes -->
+                <div class="col-6 p-2">
+                    <label for="phone_mail">Phone Number or Email*</label>  <br>
+                    <div class="item">
+                    <input type="text" name="phone_mail" id="phone_mail" placeholder="Please enter your Phone Number or Email" required>
+                    </div>
+                    <label for="password">Password*</label>  <br>
+                    <div class="item">
+                    <input type="password" name="password" id="password" placeholder="Please enter your password" required> <i class="bi bi-eye-fill btn" id="togglePassword"></i>
+                    </div>
+                    <a href="#" class="float-end">Forgot Password?</a>
+                        <script>
+                            const togglePassword = document.querySelector("#togglePassword");
+                            const password = document.querySelector("#password");
+
+                            togglePassword.addEventListener("click", function () {
+                                
+                                const type = password.getAttribute("type") === "password" ? "text" : "password";
+                                password.setAttribute("type", type);
+                                
+                                this.classList.toggle("bi-eye-slash-fill");
+                            });
+                        </script>
+                </div>
+                <!-- submit buttons -->
+                <div class="col-6 p-4">
+                    <div class="slide-submit">
+                    <div class="slide-submit-text">Slide to Submit</div>
+                    <div class="slide-submit-thumb">»</div>
+                            <script>
+                                    $('.slide-submit').slideToSubmit({
+                                    submitDelay: 1000,
+                                    successText: 'Successfully Logged in',
+                                    });
+                            </script>
+                    </div>
+                    <span>or, login with</span>
+                    <button class="login_with_fb"><i class="bi bi-facebook"></i> Facebook</button>
+                    <button class="login_with_google"><i class="bi bi-google"></i> Google</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+      <!-- codes for topBar section -->
+<div id="topBar">
+  <div class="container">
+    <ul>
+      <li><a href="#">SAVE MORE ON APP</a></li>
+      <li><a href="#">SELL ON DARAZ</a></li>
+      <li><a href="#">CUSTOMER CARE</a></li>
+      <li><a href="#">TRACK MY ORDER</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li><a href="#">DARAZ AFFILIATE PROGRAM</a></li>
+      <li><a href="javascript:void(0)">ভাষা</a></li>
+    </ul>
+  </div>
+      <!-- app banner -->
+  <div class="app_banner">
+    <img src="img/fav.png" alt="logo">
+    <p>অ্যাপে প্রথম অর্ডারে আকর্ষণীয় ভাউচার  <br>  ডাউনলোড করুন দারাজ অ্যাপ</p>
+    <a href="javascript:void(0)">ডাউনলোড করুন</a>
+  </div>
+</div>
+
+      <!-- codes for header section -->
+<header>
+  <div class="container">
+    <a href="index.html" class="header_logo"><img src="img/logo.svg" alt="Logo" width="100%"></a>
+    <div class="header_search_wrapper">
+      <input type="search" name="search_product" id="search_product" placeholder="Search in Daraz">
+      <div class="search_button" onclick="product_search()"><i class="bi bi-search"></i></div>
+      <!----
+          <script>
+            let cards = document.querySelectorAll('.box')
+    
+            function product_search() {
+              let search_query = document.getElementById("search_product").value;
+              
+              //Use innerText if all contents are visible
+              //Use textContent for including hidden elements
+              for (var i = 0; i < cards.length; i++) {
+                  if(cards[i].textContent.toLowerCase()
+                          .includes(search_query.toLowerCase())) {
+                      cards[i].classList.remove("is-hidden");
+                  } else {
+                      cards[i].classList.add("is-hidden");
+                  }
+                 }
+               };
+          </script>     -->
+    </div>
+    <div class="cart_button" title="Cart">
+      <span class="cart_quantity"></span>
+      <a href="cart.html" class="bi bi-cart3"></a>
+    </div>
+    <a href="javascript:void(0)" class="getApp"> <img src="img/app_banner.png" alt="App Banner" width="180px"> </a>
+  </div>
+  <div class="container position-relative">
+    <button class="cat_btn" onclick="document.querySelector('header #category').classList.toggle('show'); document.querySelector('header .cat_btn span').classList.toggle('bi-chevron-up');">Category <span class="bi bi-chevron-down ms-1"></span></button>
+      <!-- category section -->
+    <div id="category">
+        <div class="main_menu">
+            <ul>
+            <li>Menu 1  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 2  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 3  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 4  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 5  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+      <script>
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 500) {
+          $('header').addClass('sticky_header');
+          } else {
+              $('header').removeClass('sticky_header');
+          }
+        });
+      </script>
+</header>
+
+        <!-- codes for breadcrumb section -->
+<div class="container mt-4">
+    <ul class="breadcrumb m-0">
+        <li><a href="categories.html">Eyewear</a> <i class="bi bi-chevron-right"></i></li>
+        <li><a href="categories.html">Sunglasses</a> <i class="bi bi-chevron-right"></i></li>
+        <li><a href="categories.html">Men</a> <i class="bi bi-chevron-right"></i></li>
+        <li>Fashionable Polarized driving Sport Square Sunglass</li>
+    </ul>
+</div>
+
+        <!--codes for product details section -->
+<section id="product_details">
+    <div class="container">
+        <div class="details_wrapper">
+            <div class="row product-under">
+                <div class="col-md-3 p-2">
+                    <!-- album -->
+                    <div class="album">
+                        <img class="productImg" src="img/just4u/2.jpg" alt="Sunglass" width="100%" height="100%">
+                        <hr>
+                        <ul>
+                            <li><i class="bi bi-chevron-left"></i></li>
+                            <li><img src="img/just4u/2.jpg" alt="Sunglass" onclick="document.querySelector('#product_details .album img.productImg').src='img/just4u/2.jpg';"></li>
+                            <li><img src="img/just4u/3.jpg" alt="Sunglass" onclick="document.querySelector('#product_details .album img.productImg').src='img/just4u/3.jpg';"></li>
+                            <li><img src="img/just4u/10.jpg" alt="Sunglass" onclick="document.querySelector('#product_details .album img.productImg').src='img/just4u/10.jpg';"></li>
+                            <li><i class="bi bi-chevron-right"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- description -->
+                <div class="col-lg-5 col-md-9 p-2">
+                    <h5 class="productName">Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses Travel Best Glass New Classic Super Shephera Best Design Fashion Glasses UNisx UV Protection Best Sunglasses</h5>
+                    <div class="rate_share">
+                        <!-- ratings -->
+                        <div class="ratings">
+                            <h6>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-half"></i> <a href="#">576 Ratings</a> |   <a href="#">167 Answered Questions</a>  </h6>
+                            <h6>    Brand: <a href="#">No Brand</a> |   <a href="#">More Eyewear from No Brand</a>    </h6>
+                        </div>
+                        <div class="share_fav">
+                            <!-- share -->
+                            <div class="share_wrapper position-relative">
+                                <div class="bi bi-share-fill icon" title="Share this product" onclick="share_option()"></div>
+                                <div class="social">
+                                    <span>Share Via : </span>
+                                    <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+                                    <a href="#" title="Linkedin"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                                    <a href="#" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                                </div>
+                                                <script>
+                                                    // codes for share option
+                                                    function share_option(){
+                                                        document.querySelector('#product_details .details_wrapper .rate_share .share_fav .social').classList.toggle('show')
+                                                    };
+                                                    // hide share option when click outside
+                                                    $(document).click(function(event) {
+                                                        if (!$(event.target).closest("#product_details .details_wrapper .rate_share .share_fav .social , #product_details .details_wrapper .rate_share .share_fav .icon").length) {
+                                                            $("body").find(".social").removeClass("show");
+                                                        }
+                                                    });
+                                                </script>
+                            </div>
+                            <!-- favourite -->
+                            <div class="fav_wrapper">
+                                <div class="bi bi-heart icon" title="Add to favourite" onclick="document.querySelector('#login_modal').style.display='block';"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="price" style="color: #f57224;"> ৳<span class="priceValue">210</span> </h3>
+                    <span><del>৳800</del> -74%</span>
+                    <!-- voucher cards -->
+                    <div class="voucher_wrapper">
+                        <h6>Promotions</h6>
+                        <button class="voucher_button" onclick="voucherCard()">Min spend ৳ 5,000 <i class="bi bi-caret-down-fill ms-2"></i></button>
+                        <div class="voucher_card_wrapper">
+                            <h6 class="text-center mb-3">Store Voucher(s)</h6>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 500 off</h6>
+                                        <span>Min spend ৳ 5,000</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                    <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 400 off</h6>
+                                        <span>Min spend ৳ 4,000</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                   <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 300 off</h6>
+                                        <span>Min spend ৳ 3,000</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                   <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 200 off</h6>
+                                        <span>Min spend ৳ 2,000</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                   <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 150 off</h6>
+                                        <span>Min spend ৳ 1,500</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                   <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 100 off</h6>
+                                        <span>Min spend ৳ 1,000</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                   <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                            <div class="voucher_card">
+                                <div class="item">
+                                    <img src="img/fake_qr.png" alt="QR Code" width="70%">  <br>
+                                    <span>SARAH</span>
+                                </div>
+                                <div class="item">
+                                    <div class="text">
+                                        <h6>৳ 50 off</h6>
+                                        <span>Min spend ৳ 500</span>
+                                        <div class="date">Oct 16 - Oct 23 2022</div>
+                                    </div>
+                                   <button class="collect" onclick="collect_voucher()">Collect</button>
+                                </div>
+                            </div>
+                        </div>
+                                    <script>
+                                        // toggle voucher card by button
+                                        function voucherCard(){
+                                            document.querySelector("#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper").classList.toggle("show");
+                                        };
+                                        // open login form to collect voucher
+                                        function collect_voucher(){
+                                            document.querySelector("#login_modal").style.display="block";
+                                        };
+                                        // hide voucher card when click outside
+                                        $(document).click(function(event) {
+                                            if (!$(event.target).closest("#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper , #product_details .details_wrapper .voucher_wrapper button.voucher_button").length) {
+                                                $("body").find(".voucher_card_wrapper").removeClass("show");
+                                            }
+                                        });
+                                    </script>
+                    </div>
+                    <div class="bottomBtns">
+                        <button class="buy_btn" onclick="document.querySelector('#login_modal').style.display='block';"><i class="bi bi-bag me-2"></i> Buy Now</button>
+                        <button class="addToCart" data-product-id="sunglass"><i class="bi bi-cart3 me-2"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-light">
+                    <!-- delivery -->
+                    <div class="delivery_location">
+                        <div class="delivery_desc">
+                            <span>Delivery <span class="float-end bi bi-info-circle" onclick="document.querySelector('#product_details .details_wrapper .delivery_location .delivery_desc .desc_box').classList.toggle('show')"></span></span>
+                            <div class="desc_box">
+                                <h6>Delivery</h6>
+                                <div class="item">
+                                    <i class="bi bi-truck"></i>
+                                    <span>Standard Delivery:Enjoy delivery of your order directly to the doorstep!</span>
+                                </div>
+                                <a href="#">Find out more</a>
+                                <div class="item">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <span>Cash on Delivery Available</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <i class="bi bi-geo-alt fs-6"></i>
+                            <select name="delivery_location_select" id="delivery_location_select">
+                                <!-- dhaka division -->
+                                <optgroup label="Dhaka">
+                                    <option>Dhaka District</option>
+                                    <option>Gazipur District</option>
+                                    <option>Narayanganj District</option>
+                                    <option>Faridpur District</option>
+                                    <option>Tangail District</option>
+                                </optgroup>
+                                <!-- mymensingh division -->
+                                <optgroup label="Mymensingh">
+                                    <option>Mymensingh District</option>
+                                    <option>Netrakona District</option>
+                                    <option>Jamalpur District</option>
+                                    <option>Sherpur District</option>
+                                </optgroup>
+                                <!-- rajshahi division -->
+                                <optgroup label="Rajshahi">
+                                    <option>Rajshahi District</option>
+                                    <option>Bogura District</option>
+                                    <option>Natore District</option>
+                                    <option>Pabna District</option>
+                                    <option>Joypurhat District</option>
+                                </optgroup>
+                                <!-- rangpur division -->
+                                <optgroup label="Rangpur">
+                                    <option>Rangpur District</option>
+                                    <option>Dinajpur District</option>
+                                    <option>Kurigram District</option>
+                                    <option>Lalmonirhat District</option>
+                                    <option>Gaibandha District</option>
+                                </optgroup>
+                                <!-- sylhet division -->
+                                <optgroup label="Sylhet">
+                                    <option>Sylhet District</option>
+                                    <option>Habiganj District</option>
+                                    <option>Moulvibajar District</option>
+                                    <option>Sunamganj District</option>
+                                </optgroup>
+                                <!-- khulna division -->
+                                <optgroup label="Khulna">
+                                    <option>Khulna District</option>
+                                    <option>Jeshore District</option>
+                                    <option>Kushtia District</option>
+                                    <option>Meherpur District</option>
+                                    <option>Bagerhat District</option>
+                                </optgroup>
+                                <!-- chittagong division -->
+                                <optgroup label="Chittagong">
+                                    <option>Chittagong District</option>
+                                    <option>Noakhali District</option>
+                                    <option>Comilla District</option>
+                                    <option>Feni District</option>
+                                    <option>Cox's Bajar District</option>
+                                </optgroup>
+                                <!-- barishal division -->
+                                <optgroup label="Barishal">
+                                    <option>Barishal District</option>
+                                    <option>Bhola District</option>
+                                    <option>Jhalokathi District</option>
+                                    <option>Patuakhali District</option>
+                                    <option>Pirojpur District</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="standard_delivery">
+                        <div class="top">
+                            <div class="d-flex">
+                                <i class="bi bi-truck"></i>
+                                <span>Standard Delivery <br>    <span style="color: gray; font-size: 12px;">3 - 6 day(s)</span></span>
+                            </div>
+                            <span class="align-self-center">৳ 62</span>
+                        </div>
+                        <div class="bottom">Enjoy free shipping promotion with minimum spend of ৳ 850 from <span style="color: tomato;">SARAH</span>.</div>
+                    </div>
+                    <div class="d-flex p-2">
+                        <i class="bi bi-cash-coin h6 px-3"></i>
+                        <span>Cash on Delivery Available</span>
+                    </div>
+                    <hr>
+                    <!-- service -->
+                    <div class="p-3">
+                        <span>Service <span class="float-end bi bi-info-circle"></span></span>
+                        <div class="d-flex mt-3">
+                            <i class="bi bi-arrow-clockwise h5 align-self-center pe-3"></i>
+                            <span><h6>7 Day Return</h6>    Change of mind applicable</span>
+                        </div>
+                        <div class="d-flex mt-3">
+                            <i class="bi bi-shield-slash h6 pe-3"></i>
+                            <span>Warranty not available</span>
+                        </div>
+                    </div>
+                    <!-- seller -->
+                    <div class="d-flex justify-content-between p-3">
+                        <span>Sold by  <h6><b>SARAH</b></h6></span>
+                        <span style="color: #199CC4; align-self: center; cursor: pointer;" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='block';"><i class="bi bi-chat-right-dots"></i> Chat</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="border col-4 p-3 text-center">
+                            <span>Positive Seller Ratings</span>
+                            <h3 class="mt-2">87%</h3>
+                        </div>
+                        <div class="border col-4 p-3 text-center">
+                            <span>Ship on Time</span>
+                            <h3 class="mt-2">100%</h3>
+                        </div>
+                        <div class="border col-4 p-3 text-center">
+                            <span>Chat Response Rate</span>
+                            <h3 class="mt-2">100%</h3>
+                        </div>
+                    </div>
+                    <div class="text-center my-2"><a href="#">Visit Sore</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for combo section -->
+<section id="combo">
+    <div class=" container combo_wrapper">
+        <div class="title">
+            <div class="d-flex">
+                <h6>18 Combo (count, plural, one other)</h6>
+                <span style="color: #f57224; align-self: center;">SAVE UP TO ৳ 25</span>
+            </div>
+            <div class="buttons">
+                <button class="left_button bi bi-chevron-left" onclick="slide_left()"></button>
+                <button class="right_button bi bi-chevron-right"></button>
+                        <script>
+                            // codes for slide left
+                            document.querySelector("button.left_button").addEventListener("click", function(){
+                                if (document.getElementsByClassName("slider_item")[0].classList.contains("active")) {
+                                    document.getElementsByClassName("slider_item")[1].classList.add("active");
+                                    document.getElementsByClassName("slider_item")[0].classList.remove("active");
+                                } else if (document.getElementsByClassName("slider_item")[1].classList.contains("active")) {
+                                    document.getElementsByClassName("slider_item")[0].classList.add("active");
+                                    document.getElementsByClassName("slider_item")[1].classList.remove("active");
+                                }
+                            });
+                            // codes for slide right
+                            document.querySelector("button.right_button").addEventListener("click", function(){
+                                if (document.getElementsByClassName("slider_item")[0].classList.contains("active")) {
+                                    document.getElementsByClassName("slider_item")[1].classList.add("active");
+                                    document.getElementsByClassName("slider_item")[0].classList.remove("active");
+                                } else if (document.getElementsByClassName("slider_item")[1].classList.contains("active")) {
+                                    document.getElementsByClassName("slider_item")[0].classList.add("active");
+                                    document.getElementsByClassName("slider_item")[1].classList.remove("active");
+                                }
+                            });
+                        </script>
+            </div>
+        </div>
+        <div class="slider_wrapper">
+            <!-- slider 1 -->
+            <div class="slider_item slider_1 active">
+                <ul>
+                    <li>
+                        <img src="img/just4u/2.jpg" alt="Sunglass"> <br>
+                        <span>Stylist Polarized New Premium Quality Men Sunglasses</span>
+                        <h5>৳ 210</h5>
+                    </li>
+                    <li class="icon"><h1>+</h1></li>
+                    <li>
+                        <img src="img/just4u/3.jpg" alt="Sunglass"> <br>
+                        <span>Stylist Polarized New Premium Quality Men Sunglasses</span>
+                        <h5>৳ 249</h5>
+                    </li>
+                </ul>
+                <hr>
+                <div class="d-flex p-3 flex-wrap">
+                    <div>
+                        <h6>Total : ৳ 459</h6>
+                        <h4>Combo Price : ৳ 400 <span class="h6 ms-3 text-muted">save ৳ 59</span></h4>
+                    </div>
+                    <button>ADD 2 (count, plural, one other) TO CART</button>
+                </div>
+            </div>
+            <!-- slider 2-->
+            <div class="slider_item slider_2">
+                <ul>
+                    <li>
+                        <img src="img/just4u/3.jpg" alt="Sunglass"> <br>
+                        <span>Stylist Polarized New Premium Quality Men Sunglasses</span>
+                        <h5>৳ 210</h5>
+                    </li>
+                    <li class="icon"><h1>+</h1></li>
+                    <li>
+                        <img src="img/just4u/2.jpg" alt="Sunglass"> <br>
+                        <span>Stylist Polarized New Premium Quality Men Sunglasses</span>
+                        <h5>৳ 275</h5>
+                    </li>
+                    <li class="icon"><h1>+</h1></li>
+                    <li>
+                        <img src="img/just4u/3.jpg" alt="Sunglass"> <br>
+                        <span>Stylist Polarized New Premium Quality Men Sunglasses</span>
+                        <h5>৳ 299</h5>
+                    </li>
+                    <li class="icon"><h1>+</h1></li>
+                    <li>
+                        <img src="img/just4u/2.jpg" alt="Sunglass"> <br>
+                        <span>Stylist Polarized New Premium Quality Men Sunglasses</span>
+                        <h5>৳ 232</h5>
+                    </li>
+                </ul>
+                <hr>
+                <div class="d-flex p-3 flex-wrap">
+                    <div>
+                        <h6>Total : ৳ 1016</h6>
+                        <h4>Combo Price : ৳ 899 <span class="h6 ms-3 text-muted">save ৳ 117</span></h4>
+                    </div>
+                    <button>ADD 4 (count, plural, one other) TO CART</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- codes for main section -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 pe-lg-2">
+                <!-- codes for product description section -->
+                <div class="product_desc">
+                    <h6 style="color: #0d7494;">Product details of Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses Travel Best</h6>
+                    <div class="lists">
+                        <ul>
+                            <li>polorized made in chaina high quality sunglass for men</li>
+                            <li>polorized sunglass</li>
+                            <li>Size:medium</li>
+                            <li>Place of Origin:Zhejiang, China</li>
+                            <li>100% same as picture</li>
+                        </ul>
+                        <ul>
+                            <li>polorized made in chaina high quality sunglass for men</li>
+                            <li>polorized sunglass</li>
+                            <li>Size:medium</li>
+                            <li>Place of Origin:Zhejiang, China</li>
+                            <li>100% same as picture</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <ul>
+                        <li>polorized made in chaina high quality sunglass for men</li>
+                        <li>Place of Origin:Zhejiang, China</li>
+                        <li>100% same as picture</li>
+                        <li>Lenses Material:Acrylic Glass</li>
+                        <li>Age:Men</li>
+                        <li>Material:Frame: 66218 Lens:Acrylic metal</li>
+                        <li>Style:Fashion Sunglasses</li>
+                        <li>Lenses Optical Attribute:Polarized</li>
+                        <li>Certification:CE FDA UV400</li>
+                        <li>Color:Pictures show (accept customization)</li>
+                        <li>lens color:same as picture</li>
+                        <li>frame colour:same as picture</li>
+                        <li>sunglass:same as picture</li>
+                        <li>Color: 400 UV Protection</li>
+                    </ul>
+                    <hr>
+                    <h6 style="color: #0d7494;">Specifications of Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses Travel Best</h6>
+                    <div class="d-flex">
+                        <div style="width: 50%;">
+                            <span class="text-muted">Brand</span>   <br>
+                            <b>No Brand</b>
+                        </div>
+                        <div style="width: 50%;">
+                            <span class="text-muted">SKU</span>   <br>
+                            <b>133260858_BD-1054880257</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <p style="width: 50%; color: #0d7494; align-self: center;">What's in the box</p>
+                        <p>Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses Travel Best Glass New Classic Super Shephera Best Design Fashion Glasses UNisx UV Protection Best Sunglasses</p>
+                    </div>
+                </div>
+
+                <!-- codes for rating section -->
+                <div class="rating_wrapper">
+                    <div class="title">
+                        <h6>Ratings & Reviews of Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses</h6>
+                    </div>
+                    <div class="ratings">
+                        <div class="left">
+                            <h1>4.5<span class="text-muted h4">/5</span></h1>
+                            <h3 class="star">
+                                <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-half"></i>
+                            </h3>
+                            <span>576 Ratings</span>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li class="star">
+                                    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>
+                                </li>
+                                <li>
+                                    <div class="range_wrapper">
+                                        <div class="range" style="width: 80%;"></div>
+                                    </div>
+                                </li>
+                                <li>436</li>
+                            </ul>
+                            <ul>
+                                <li class="star">
+                                    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star"></i>
+                                </li>
+                                <li>
+                                    <div class="range_wrapper">
+                                        <div class="range" style="width: 10%;"></div>
+                                    </div>
+                                </li>
+                                <li>35</li>
+                            </ul>
+                            <ul>
+                                <li class="star">
+                                    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>
+                                </li>
+                                <li>
+                                    <div class="range_wrapper">
+                                        <div class="range" style="width: 8%;"></div>
+                                    </div>
+                                </li>
+                                <li>28</li>
+                            </ul>
+                            <ul>
+                                <li class="star">
+                                    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>
+                                </li>
+                                <li>
+                                    <div class="range_wrapper">
+                                        <div class="range" style="width: 4%;"></div>
+                                    </div>
+                                </li>
+                                <li>14</li>
+                            </ul>
+                            <ul>
+                                <li class="star">
+                                    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>    <i class="bi bi-star"></i>
+                                </li>
+                                <li>
+                                    <div class="range_wrapper">
+                                        <div class="range" style="width: 10%;"></div>
+                                    </div>
+                                </li>
+                                <li>32</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- codes for review section -->
+                <div class="review_wrapper">
+                    <div class="title">
+                        <div class="left">Product Reviews</div>
+                        <div class="right">
+                            <!-- sort -->
+                            <h6>
+                                <span class="text-muted bi bi-arrow-down-up"> Sort : </span>
+                                <select name="sort" id="sort">
+                                    <option>Relevance</option>
+                                    <option>Recent</option>
+                                    <option>Rating : High to Low</option>
+                                    <option>Rating : Low to High</option>
+                                </select>
+                            </h6>
+                            <!-- filter -->
+                            <h6>
+                                <span class="text-muted bi bi-funnel"> Filter : </span>
+                                <select name="sort" id="sort">
+                                    <option>All Star</option>
+                                    <option>5 Star</option>
+                                    <option>4 Star</option>
+                                    <option>3 Star</option>
+                                    <option>2 Star</option>
+                                    <option>1 Star</option>
+                                </select>
+                            </h6>
+                        </div>
+                    </div>
+                    <!-- review inner -->
+                    <div class="review_inner review1">
+                        <div class="star">
+                            <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>
+                            <span class="text-muted float-end">28 Aug 2021</span>
+                        </div>
+                        <div class="buyer">
+                            <span class="text-muted me-3">by 013*******20</span>
+                            <span class="bi bi-shield-fill-check">Verified Purchase</span>
+                        </div>
+                        <div class="review_text">
+                            <p>ভালো দিক : প্যাকিং + পণ্যের মান ভালো লাগছে। ডেলিভারি ও ব্যবহার মার্জিত।</p>
+                            <p>সমস্যা : ভেবেছিলাম ডার্ক কালো লেন্স পাবো বাট আসছে ডার্ক ব্লু। তবুও কম্প্লেইন নেই। ওভারঅল ভালোই।</p>
+                            <p>বক্সটা দিলো না😘🤣</p>
+                        </div>
+                        <div class="review_images">
+                            <img src="img/just4u/2.jpg" alt="Sunglass">
+                            <img src="img/just4u/3.jpg" alt="Sunglass">
+                            <img src="img/just4u/9.jpg" alt="Sunglass">
+                            <img src="img/just4u/10.jpg" alt="Sunglass">
+                        </div>
+                        <div class="my-3 text-muted">Lens Color : BLACK , Frame Color : BLACK</div>
+                        <button class="h6 bi bi-hand-thumbs-up-fill" onclick="like_review1()"> <span class="review_like_count">182</span></button>
+                                    <script>
+                                        // codes for like the review
+                                        function like_review1(){
+                                            let text =  document.querySelector("main .review_wrapper .review1 .review_like_count");
+                                            let thumb = document.querySelector("main .review_wrapper .review1 .bi-hand-thumbs-up-fill");
+
+                                           if (text.innerHTML === "182") {
+                                                text.innerHTML = "183";
+                                           } else {
+                                                text.innerHTML = "182";
+                                           }
+                                           // change thumb
+                                           thumb.classList.toggle('blue');
+                                        };
+                                    </script>
+                        <div class="review_menu">
+                            <button class="bi bi-three-dots-vertical" onclick="document.querySelector('main .review_wrapper .review1 .review_menu ul.menu_inner').classList.toggle('show')"></button>
+                            <ul class="menu_inner">
+                                <li>Not Helpful</li>
+                                <li>Report Abuse</li>
+                            </ul>
+                        </div>
+                        <div class="review_reply">
+                            <h6><i class="bi bi-shop"></i> <span>Respond from store - 1 year ago</span></h6>
+                            <p>প্রতিযোগিতামুলক অনলাইন বাজার এ অধিপত্য বিস্তার এর লক্ষে সল্প মুল্যে নিখুঁত পণ্য সরবরাহে আমরা বদ্ধ পরিকর</p>
+                            <button class="h6 bi bi-hand-thumbs-up-fill" onclick="like_review_reply1()"> <span class="review_reply_like_count">57</span></button>
+                                    <script>
+                                        // codes for like the review
+                                        function like_review_reply1(){
+                                            let text2 =  document.querySelector("main .review_wrapper .review1 .review_reply_like_count");
+                                            let thumb2 = document.querySelector("main .review_wrapper .review1 .review_reply .bi-hand-thumbs-up-fill");
+
+                                           if (text2.innerHTML === "57") {
+                                                text2.innerHTML = "58";
+                                           } else {
+                                                text2.innerHTML = "57";
+                                           }
+                                           // change thumb
+                                           thumb2.classList.toggle('blue');
+                                        };
+                                    </script>
+                            <div class="review_reply_menu">
+                                <button class="bi bi-three-dots-vertical" onclick="document.querySelector('main .review_wrapper .review1 .review_reply_menu ul.menu_inner').classList.toggle('show')"></button>
+                                <ul class="menu_inner">
+                                    <li>Unmark as Not Helpful</li>
+                                    <li>Report Abuse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="review_inner review2">
+                        <div class="star">
+                            <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-half"></i>
+                            <span class="text-muted float-end">17 Oct 2021</span>
+                        </div>
+                        <div class="buyer">
+                            <span class="text-muted me-3">by Md R.</span>
+                            <span class="bi bi-shield-fill-check">Verified Purchase</span>
+                        </div>
+                        <div class="review_text">
+                            <p>same as the picture, packaging quality is poor, কিন্তু জিনিস অরিজিনাল</p>
+                        </div>
+                        <div class="review_images">
+                            <img src="img/just4u/9.jpg" alt="Sunglass">
+                            <img src="img/just4u/2.jpg" alt="Sunglass">
+                            <img src="img/just4u/10.jpg" alt="Sunglass">
+                            <img src="img/just4u/3.jpg" alt="Sunglass">
+                        </div>
+                        <div class="my-3 text-muted">Lens Color : BLACK , Frame Color : BLACK</div>
+                        <button class="h6 bi bi-hand-thumbs-up-fill" onclick="like_review2()"> <span class="review_like_count">23</span></button>
+                                    <script>
+                                        // codes for like the review
+                                        function like_review2(){
+                                            let text =  document.querySelector("main .review_wrapper .review2 .review_like_count");
+                                            let thumb = document.querySelector("main .review_wrapper .review2 .bi-hand-thumbs-up-fill");
+
+                                           if (text.innerHTML === "23") {
+                                                text.innerHTML = "24";
+                                           } else {
+                                                text.innerHTML = "23";
+                                           }
+                                           // change thumb
+                                           thumb.classList.toggle('blue');
+                                        };
+                                    </script>
+                        <div class="review_menu">
+                            <button class="bi bi-three-dots-vertical" onclick="document.querySelector('main .review_wrapper .review2 .review_menu ul.menu_inner').classList.toggle('show')"></button>
+                            <ul class="menu_inner">
+                                <li>Not Helpful</li>
+                                <li>Report Abuse</li>
+                            </ul>
+                        </div>
+                        <div class="review_reply">
+                            <h6><i class="bi bi-shop"></i> <span>Respond from store - 1 year ago</span></h6>
+                            <p>প্রতিযোগিতামুলক অনলাইন বাজার এ অধিপত্য বিস্তার এর লক্ষে সল্প মুল্যে নিখুঁত পণ্য সরবরাহে আমরা বদ্ধ পরিকর</p>
+                            <button class="h6 bi bi-hand-thumbs-up-fill" onclick="like_review_reply2()"> <span class="review_reply_like_count">08</span></button>
+                                    <script>
+                                        // codes for like the review
+                                        function like_review_reply2(){
+                                            let text2 =  document.querySelector("main .review_wrapper .review2 .review_reply_like_count");
+                                            let thumb2 = document.querySelector("main .review_wrapper .review2 .review_reply .bi-hand-thumbs-up-fill");
+
+                                           if (text2.innerHTML === "08") {
+                                                text2.innerHTML = "09";
+                                           } else {
+                                                text2.innerHTML = "08";
+                                           }
+                                           // change thumb
+                                           thumb2.classList.toggle('blue');
+                                        };
+                                    </script>
+                            <div class="review_reply_menu">
+                                <button class="bi bi-three-dots-vertical" onclick="document.querySelector('main .review_wrapper .review2 .review_reply_menu ul.menu_inner').classList.toggle('show')"></button>
+                                <ul class="menu_inner">
+                                    <li>Unmark as Not Helpful</li>
+                                    <li>Report Abuse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <ul class="pagination">
+                        <li class="disabled"><i class="bi bi-chevron-left"></i></li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li class="disabled">. . .</li>
+                        <li>109</li>
+                        <li><i class="bi bi-chevron-right"></i></li>
+                    </ul>
+                </div>
+                <!-- codes for qa from sarah-->
+                <div class="qa_sarah">
+                    <div class="title">Questions About This Product (167)</div>
+                    <div class="top">
+                        <p><a href="login.html">Login</a> or <a href="#">Register</a> to ask questions to seller</p>
+                        <span>Other questions answered by SARAH (167)</span>
+                    </div>
+                    <div class="qa_inner">
+                        <ul>
+                            <li><span class="icon">Q</span></li>
+                            <li>
+                                <b>ফ্রেমটা কি মেটাল হবে?</b>   <br>
+                                <small>Khaledour R. - 5 days ago</small>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><span class="icon ans">A</span></li>
+                            <li>
+                                <b>বিস্তারিত বলা আছে</b>   <br>
+                                <small>SARAH - answered within 3 hours</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="qa_inner">
+                        <ul>
+                            <li><span class="icon">Q</span></li>
+                            <li>
+                                <b>amar black glass nevy blue frame lagbe</b>   <br>
+                                <small>013*******20 - 1 week ago</small>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><span class="icon ans">A</span></li>
+                            <li>
+                                <b>same as picture</b>   <br>
+                                <small>SARAH - answered within 22 hours</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="qa_inner">
+                        <ul>
+                            <li><span class="icon">Q</span></li>
+                            <li>
+                                <b>ami order korbo ki vabe</b>   <br>
+                                <small>019******988 - 13 Aug 2022</small>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><span class="icon ans">A</span></li>
+                            <li>
+                                <b>wait koren</b>   <br>
+                                <small>SARAH - answered within 8 hours</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="pagination">
+                        <li class="disabled"><i class="bi bi-chevron-left"></i></li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li class="disabled">. . .</li>
+                        <li>109</li>
+                        <li><i class="bi bi-chevron-right"></i></li>
+                    </ul>
+                </div>
+
+                <!-- codes for most view -->
+                <div class="most_view mb-4">
+                    <div class="title">People Who Viewed This Item Also Viewed</div>
+                    <div class="d-flex">
+                        <div class="item">
+                            <a href="#">
+                                <img src="img/just4u/1.jpg" alt="Sunglass">
+                                <h6>High quality AO sunglass for man</h6>
+                                <h4>৳ 460</h4>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="img/just4u/3.jpg" alt="Sunglass">
+                                <h6>High quality AO sunglass for man</h6>
+                                <h4>৳ 460</h4>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="img/just4u/8.jpg" alt="Sunglass">
+                                <h6>High quality AO sunglass for man</h6>
+                                <h4>৳ 460</h4>
+                                <div class="star">
+                                    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-fill"></i>    <i class="bi bi-star-half"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="img/just4u/9.jpg" alt="Sunglass">
+                                <h6>High quality AO sunglass for man</h6>
+                                <h4>৳ 460</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- codes for same store products section -->
+            <div class="col-lg-3 ps-lg-2 mb-4">
+                <div class="row bg-white px-2 py-4">
+                    <h6 style="text-align: center; color: #0d7494;">From The Same Store</h6>
+                    <div class="col-lg-12 col-md-3 p-2">
+                        <a href="#">
+                            <img src="img/just4u/2.jpg" alt="Sunglass" width="100%" class="py-3">
+                            <p class="text-muted">Stylist Polarized New Premium Quality Men Sunglasses</p>
+                            <h5 style="color: #f57224;">৳ 266</h5>
+                            <span style="color: #ffd100;"><i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-half"></i>   </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-md-3 p-2">
+                        <a href="#">
+                            <img src="img/just4u/3.jpg" alt="Sunglass" width="100%" class="py-3">
+                            <p class="text-muted">Stylist Polarized New Premium Quality Men Sunglasses</p>
+                            <h5 style="color: #f57224;">৳ 266</h5>
+                            <span style="color: #ffd100;"><i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-half"></i>   </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-md-3 p-2">
+                        <a href="#">
+                            <img src="img/just4u/2.jpg" alt="Sunglass" width="100%" class="py-3">
+                            <p class="text-muted">Stylist Polarized New Premium Quality Men Sunglasses</p>
+                            <h5 style="color: #f57224;">৳ 266</h5>
+                            <span style="color: #ffd100;"><i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-half"></i>   </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-md-3 p-2">
+                        <a href="#">
+                            <img src="img/just4u/3.jpg" alt="Sunglass" width="100%" class="py-3">
+                            <p class="text-muted">Stylist Polarized New Premium Quality Men Sunglasses</p>
+                            <h5 style="color: #f57224;">৳ 266</h5>
+                            <span style="color: #ffd100;"><i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-fill"></i>   <i class="bi bi-star-half"></i>   </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+        <!-- codes for footer section -->
+<footer>
+  <!-- footer links -->
+  <div id="footer_links">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <h5>Customer Care</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">How to Buy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+          </ul>
+          <h5 class="mt-4">Earn With Daraz</h5>
+          <ul>
+            <li><a href="#">Daraz University</a></li>
+            <li><a href="#">Sell on Daraz</a></li>
+            <li><a href="#">Code of Conduct</a></li>
+            <li><a href="#">Join the Daraz Affilite Program</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Daraz</h5>
+          <ul>
+            <li><a href="about_us.html">About Daraz</a></li>
+            <li><a href="#">Digital Payments</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blog.html">Daraz Blog</a></li>
+            <li><a href="#">Daraz Cares</a></li>
+            <li><a href="#">dMart</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Daraz App</a></li>
+            <li><a href="#">Daraz Exclusive</a></li>
+            <li><a href="#">Hungrynaki Food Delivery</a></li>
+            <li><a href="#">BD Cricket Live</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-6 app_download">
+          <img src="img/daraz_app_download_qr_code.png" alt="QR Code" class="qr_for_app">
+          <div class="item">
+            <img src="img/fav.png" alt="logo">
+            <h6>Happy Shopping</h6>
+            <h6 class="text-white">Download App</h6>
+          </div>
+          <ul>
+            <li><a href="#"><img src="img/app_download_google_play.png" alt="Google Play" width="100%"></a></li>
+            <li><a href="#"><img src="img/app_download_app_store.png" alt="App Store" width="100%"></a></li>
+            <li><a href="#"><img src="img/app_download_app_gallery.png" alt="App Gallery" width="100%"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer payments -->
+  <div id="footer_payments">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Payment Methods</h5>
+          <img src="img/payment_gateway.png" alt="payment gateway" width="90%">
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Daraz International</h5>
+          <img src="img/flags.png" alt="International Marketplace" width="70%">
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Follow Us</h5>
+          <ul>
+            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Verified by</h5>
+          <img src="img/pci_dss_logo.png" alt="pci dss logo" width="50%">
+        </div>
+      </div>
+      <h5><i class="bi bi-c-circle"></i> 2022 - <span style="color: #19B2D7; font-weight: 500;">Daraz</span> | Design and Developed by <a href="https://facebook.com/j.shahinalam" target="_blank" style="color: #f57224; font-weight: 500;">Shahin Alam</a></h5>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+<!-- linked shopping cart -->
+<script src="js/shopping-cart.js"></script>

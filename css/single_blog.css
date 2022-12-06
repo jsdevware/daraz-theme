@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: 'Raleway', sans-serif;  overflow-x: hidden; font-size: 14px;}
+ul {list-style-type: none; padding: 0; margin: 0;}
+a {text-decoration: none;}
+hr {color: #999;}
+del {color: #aaa;}
+::selection {background: tomato; color: #fff;}
+button {border: none; background: none;}
+section {padding: 20px 0;}
+p {font-size: 16px;}
+
+            /* codes for topBar */
+#topBar {font-size: 25px; font-family: monospace; text-align: right; color: #2893c5;}
+
+            /* codes for header section */
+header {position: sticky; top: 0; left: 0; border-bottom: 1px solid #eee; background: #fff; z-index: 10; padding: 10px 0;}
+/* menu */
+header ul.menu {display: flex; padding: 0 10px; align-self: center;}
+header ul.menu li {font-size: 16px; padding: 0 10px; position: relative; font-weight: bold;}
+header ul.menu li:first-child {cursor: pointer; color: #2893c5;}
+header ul.menu li a {color: #2893c5;}
+header ul.menu li:hover, header ul.menu li a:hover {color: #F57224;}
+header ul.menu li ul.submenu {position: absolute; background: #fff; box-shadow: 0 0 10px #ddd; top: 180%; left: 0; width: 140px; padding: 5px 0; transform: scale(0); overflow: hidden; transition: all 0.3s; transform-origin: top left;}
+header ul.menu li:hover ul.submenu {transform: scale(1);}
+header ul.menu li ul.submenu li {padding: 5px 15px; cursor: auto; font-size: 14px; font-weight: normal;}
+header ul.menu li ul.submenu li a:hover {color: #F57224;}
+/* search bar */
+header .search_wrapper button.search_btn {margin-right: 10px; font-size: 16px; color: #F57224;}
+header .search_wrapper .search_box {background: #fff; width: 100%; height: 100%; left: 0; top: 0; position: absolute; display: flex; opacity: 0; overflow: hidden; transition: all 0.6s; transform: scale(0); transform-origin: left;}
+header .search_wrapper .search_box.show {opacity: 1; transform: scale(1);}
+header .search_wrapper .search_box input {height: 100%; width: 100%; background: none; border: none; outline: none; font-size: 20px; color: #F57224; padding: 0 20px;}
+header .search_wrapper .search_box input::placeholder {color: #F57224;}
+header .search_wrapper .search_box button {margin: 0 20px; font-size: 20px; color: #F57224;}
+/* side bar */
+header .sidebar_wrapper button.sidebar_btn {font-size: 16px; color: #F57224;}
+header .sidebar_wrapper .sidebar {position: fixed; width: 0; height: 100%; background: #00000090; top: 0; right: 0; transition: all 0.6s; overflow: hidden; display: flex; justify-content: space-between;}
+header .sidebar_wrapper .sidebar .blank {width: 100%; height: 100%;}
+header .sidebar_wrapper .sidebar .box {min-width: 350px; height: 100%; color: #fff; background: #111; padding: 20px;}
+header .sidebar_wrapper .sidebar .box a {display: flex; color: #C2FFF9; margin-bottom: 30px;}
+header .sidebar_wrapper .sidebar .box a:hover {color: #fff;}
+header .sidebar_wrapper .sidebar .box a img {width: 100px; padding: 5px;}
+header .sidebar_wrapper .sidebar .box a h6 {padding: 5px;}
+
+            /* codes for breadcrumb section */
+#breadcrumb ul {display: flex;}
+#breadcrumb ul li {padding-right: 10px; font-size: initial;}
+#breadcrumb ul li a {color: #F57224; font-weight: bold;}
+
+            /* codes for blog item section */
+#blog_item a {color: #2893c5;}
+#blog_item a:hover {color: #F57224;}
+#blog_item .tags a {font-size: initial; margin-right: 5px;}
+#blog_item .profile {display: flex; margin-top: 30px;}
+#blog_item .profile img {width: 60px; height: 60px; border-radius: 50%;}
+#blog_item .profile a {font-size: 20px;}
+/* ac description */
+#blog_item .ac_desc .ac_title h5 {background: #00AAFF; color: #fff; font-size: 20px; text-align: center; width: 100%; padding: 18px; font-weight: bold; letter-spacing: 2px; margin: 30px 0;}
+#blog_item .ac_desc .ac_title h6 {color: #00CCFF; font-size: 17px; margin-bottom: 30px;}
+/* blog controller */
+#blog_item .blog_controller .item {width: 50%; padding: 10px;}
+#blog_item .blog_controller .item .title {background: #F57224; color: #fff; display: inline-block; margin-bottom: 10px; padding: 5px 10px;}
+/* recommend */
+#blog_item .recommend .blogs {display: flex; justify-content: space-between;}
+#blog_item .recommend .blogs a {width: 32%; box-shadow: 0 0 10px #ddd; color: #555;}
+#blog_item .recommend .blogs a:hover {text-decoration: underline; box-shadow: none;}
+#blog_item .recommend .blogs a img {width: 100%;}
+/* comment */
+#blog_item .comment_wrapper {margin-top: 40px;}
+#blog_item .comment_wrapper .comment_box {background: #f8f8f8; padding: 20px; margin-top: 30px; width: 95%; overflow: hidden;}
+#blog_item .comment_wrapper .comment_box.right {float: right; margin-bottom: 30px;}
+#blog_item .comment_wrapper .comment_box a {color: #F57224; font-size: 16px;}
+#blog_item #leave_comment .box {background: #f8f8f8; padding: 20px;}
+#blog_item #leave_comment .box .item {margin-top: 10px;}
+#blog_item #leave_comment .box .item label {font-size: 16px;}
+#blog_item #leave_comment .box .item label span {color: #F57224; font-size: 20px;}
+#blog_item #leave_comment .box .item input, textarea {border: 1px solid #eee; width: 100%; padding: 10px;}
+#blog_item #leave_comment .box .item input:focus, textarea:focus {outline: 1px solid #F57224;}
+#blog_item #leave_comment .box .item input[type="checkbox"] {width: auto; margin-right: 10px; outline: none;}
+#blog_item #leave_comment .box input[type="submit"] {background: #F57224; color: #fff; border: none; padding: 10px 15px; margin-top: 20px;}
+
+            /* codes for recent article section */
+#recent_article .article a {color: #2893c5; font-size: initial; display: block; margin-bottom: 5px;}
+#recent_article .article a:hover {color: #F57224;}
+
+            /* codes for recent article section */
+#trending ul li {font-size: initial; margin-bottom: 15px;}
+#trending ul li a {color: #2893c5; margin-bottom: 5px;}
+#trending ul li a:hover {color: #F57224;}
+
+            /* codes for footer section */
+footer ul {display: flex;}
+footer ul li {padding-right: 15px;}
+footer ul li a {color: #C2FFF9; font-size: 22px;}
+footer ul li a:hover {color: #F57224;}
+
+            /* codes for responsive */
+/* for tablet */
+@media screen and (max-width: 768px) {
+ 
+header ul.menu li {font-size: 14px; padding: 0 9px;}
+    
+}

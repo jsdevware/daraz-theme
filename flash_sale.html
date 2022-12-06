@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <title>Daraz Flash Sale 2022 in Bangladesh</title>
+            <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+            <!-- link -->
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flash_sale.css">
+            <!-- script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+      <!-- codes for message box -->
+<div id="message_box_wrapper">
+  <button class="icon bi bi-chat-right-dots" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='block';"> Messages</button>
+  <div class="message_box">
+    <div class="left_box">
+      <h6 class="text-muted"><i class="bi bi-chat-right-dots"></i> Messages</h6>
+      <div class="chats">
+       <span>No chats for you</span>
+      </div>
+    </div>
+    <div class="right_box">
+      <h6>Daraz <button class="float-end bi bi-x-lg" onclick="document.querySelector('#message_box_wrapper .message_box').style.display='none';"></button></h6>
+      <div class="chat_alert">
+        <div class="bi bi-envelope-fill"></div>
+        <a href="#">Use the App for exclusive offers!</a>
+        <p>Once you start a new conversation, you'll see it listed here.</p>
+        <div class="reg">
+          <a href="login.html">Login</a> / <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- codes for topBar section -->
+<div id="topBar">
+  <div class="container">
+    <ul>
+      <li><a href="#">SAVE MORE ON APP</a></li>
+      <li><a href="#">SELL ON DARAZ</a></li>
+      <li><a href="#">CUSTOMER CARE</a></li>
+      <li><a href="#">TRACK MY ORDER</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li><a href="#">DARAZ AFFILIATE PROGRAM</a></li>
+      <li><a href="javascript:void(0)">ভাষা</a></li>
+    </ul>
+  </div>
+      <!-- app banner -->
+  <div class="app_banner">
+    <img src="img/fav.png" alt="logo">
+    <p>অ্যাপে প্রথম অর্ডারে আকর্ষণীয় ভাউচার  <br>  ডাউনলোড করুন দারাজ অ্যাপ</p>
+    <a href="javascript:void(0)">ডাউনলোড করুন</a>
+  </div>
+</div>
+      <!-- codes for header section -->
+<header>
+  <div class="container">
+    <a href="index.html" class="header_logo"><img src="img/logo.svg" alt="Logo" width="100%"></a>
+    <div class="header_search_wrapper">
+      <input type="search" name="search_product" id="search_product" placeholder="Search in Daraz">
+      <div class="search_button" onclick="product_search()"><i class="bi bi-search"></i></div>
+    </div>
+    <div class="cart_button" title="Cart">
+      <span class="cart_quantity"></span>
+      <a href="cart.html" class="bi bi-cart3"></a>
+    </div>
+    <a href="javascript:void(0)" class="getApp"> <img src="img/app_banner.png" alt="App Banner" width="180px"> </a>
+  </div>
+  <div class="container position-relative">
+    <button class="cat_btn" onclick="document.querySelector('header #category').classList.toggle('show');  document.querySelector('header .cat_btn span').classList.toggle('bi-chevron-up');">Category <span class="bi bi-chevron-down ms-1"></span></button>
+      <!-- category section -->
+    <div id="category">
+        <div class="main_menu">
+            <ul>
+            <li>Menu 1  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 1  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#">Link 8</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 2  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 2  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 3  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 3  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 4  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 4  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            
+            <li>Menu 5  <span class="float-end bi bi-chevron-right"></span>
+                <!-- Submenu -->
+                <div class="sub_menu">
+                <ul>
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                    
+                    <li>Submenu 5  <span class="float-end bi bi-chevron-right"></span>
+                        <!-- links -->
+                    <div class="links">
+                        <ul>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        </ul>
+                    </div> <!-- end links -->
+                    </li>
+                </ul>
+                </div> <!-- end Submenu -->
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+      <script>
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 500) {
+          $('header').addClass('sticky_header');
+          } else {
+              $('header').removeClass('sticky_header');
+          }
+        });
+      </script>
+</header>
+
+        <!-- codes for banner section -->
+<img src="img/flash_sale/banner.jpg" alt="banner" width="100%">
+
+        <!-- codes for counter section -->
+<div id="counter_wrapper">
+    <div class="container d-flex">
+        <a href="#on_sale_tab" class="tab_link active">On Sale Now</a>
+        <b>|</b>
+        <div class="counter">
+            <span class="align-self-center">Ends in :</span>
+            <div class="counterDown">
+            <div class="item"><span class="days" ></span></div>
+            <div class="item"><span class="hours" ></span></div>
+            <div class="item"><span class="minutes" ></span></div>
+            <div class="item"><span class="seconds" ></span></div>
+            </div>
+        </div>
+        <b>|</b>
+        <a href="#tomorrow_sale_tab" class="tab_link">00:00 Tomorrow</a>
+    </div>
+            <script type="text/javascript">
+                // codes for countdown
+                let day = document.querySelector('.days')
+                let hour = document.querySelector('.hours')
+                let minute = document.querySelector('.minutes')
+                let second = document.querySelector('.seconds')
+                let mainBox = document.querySelector('.counterDown')
+            
+                setInterval(function(){
+                let UpcomingDate = new Date('30 november 2022 11:59:00 PM');
+                let NowDate = new Date();
+                let differanceTime  = Math.floor((UpcomingDate-NowDate)/1000)
+                let differanceDay = Math.floor(differanceTime/60/60/24)
+                let differanceHour = Math.floor((differanceTime/60/60)%24)
+                let differanceMinute = Math.floor((differanceTime/60)%60)
+                let differanceSecound = Math.floor(differanceTime%60)
+            
+                if(differanceDay >= 0){
+                    mainBox.style.display = "block";
+                    day.innerHTML =  differanceDay;
+                    hour.innerHTML =  differanceHour;
+                    minute.innerHTML =differanceMinute;
+                    second.innerHTML = differanceSecound;   
+                }
+                })
+                // codes for for tab link
+                $('#counter_wrapper a.tab_link').click(function(){
+                    $('#counter_wrapper a.tab_link').removeClass('active');
+                    $(this).addClass('active');
+                });
+            </script>
+</div>
+
+            <!-- codes for on sale tab section -->
+<section id="on_sale_tab">
+    <div class="container">
+        <div class="title">On Sale Now</div>
+        <!-- products -->
+        <div class="product_wrapper">
+            <div class="product">
+                <img src="img/flash_sale/product-1.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 80%; background: #F57224;"></div>   </div>
+                <span>208 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-2.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 49%; background: #F57224;"></div>   </div>
+                <span>136 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product sold">
+                <img src="img/flash_sale/product-3.jpg" alt="product">
+                <div class="overlay"><span>SOLD <br> OUT</span></div>
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-4.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 77%; background: #F57224;"></div>   </div>
+                <span>186 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-5.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 66%; background: #F57224;"></div>   </div>
+                <span>138 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-6.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 33%; background: #F57224;"></div>   </div>
+                <span>86 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/1.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 5%; background: #F57224;"></div>   </div>
+                <span>12 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/2.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 72%; background: #F57224;"></div>   </div>
+                <span>177 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/3.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 12%; background: #F57224;"></div>   </div>
+                <span>48 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/4.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 96%; background: #F57224;"></div>   </div>
+                <span>266 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/5.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 45%; background: #F57224;"></div>   </div>
+                <span>96 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product sold">
+                <img src="img/just4u/6.jpg" alt="product">
+                <div class="overlay"><span>SOLD <br> OUT</span></div>
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/7.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 22%; background: #F57224;"></div>   </div>
+                <span>44 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/8.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 96%; background: #F57224;"></div>   </div>
+                <span>246 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/9.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 61%; background: #F57224;"></div>   </div>
+                <span>178 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product sold">
+                <img src="img/just4u/10.jpg" alt="product">
+                <div class="overlay"><span>SOLD <br>    OUT</span></div>
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/11.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 12%; background: #F57224;"></div>   </div>
+                <span>32 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/12.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 37%; background: #F57224;"></div>   </div>
+                <span>108 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/categories/1.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 46%; background: #F57224;"></div>   </div>
+                <span>128 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/categories/2.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 87%; background: #F57224;"></div>   </div>
+                <span>239 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/categories/3.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 5%; background: #F57224;"></div>   </div>
+                <span>23 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/categories/4.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 20%; background: #F57224;"></div>   </div>
+                <span>52 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/categories/5.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 57%; background: #F57224;"></div>   </div>
+                <span>185 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/categories/6.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳78</div>
+                <div><del>৳250</del> <span class="off_perc">-68%</span></div>
+                <div class="range_wrapper"> <div style="height: 100%; width: 76%; background: #F57224;"></div>   </div>
+                <span>190 sold</span>
+                <div class="mt-3 text-center"><a href="product-details.html">BUY NOW</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- codes for tomorrow sale tab section -->
+<section id="tomorrow_sale_tab">
+    <div class="container">
+        <div class="title">00:00 Tomorrow</div>
+        <!-- products -->
+        <div class="product_wrapper">
+            <div class="product">
+                <img src="img/flash_sale/product-1.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-2.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-3.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-4.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-5.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/flash_sale/product-6.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/1.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/2.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/3.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/4.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/5.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+            <div class="product">
+                <img src="img/just4u/6.jpg" alt="product">
+                <div class="desc"><span>Saepe quod autem, fuga, laboriosam recusandae debitis</span></div>
+                <div class="price">৳ ???</div>
+                <del>৳250</del>
+                <div class="mt-3 text-center"><a href="product-details.html">PREVIEW</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- codes for footer section -->
+<footer>
+  <!-- footer links -->
+  <div id="footer_links">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <h5>Customer Care</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">How to Buy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+          </ul>
+          <h5 class="mt-4">Earn With Daraz</h5>
+          <ul>
+            <li><a href="#">Daraz University</a></li>
+            <li><a href="#">Sell on Daraz</a></li>
+            <li><a href="#">Code of Conduct</a></li>
+            <li><a href="#">Join the Daraz Affilite Program</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Daraz</h5>
+          <ul>
+            <li><a href="about_us.html">About Daraz</a></li>
+            <li><a href="#">Digital Payments</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blog.html">Daraz Blog</a></li>
+            <li><a href="#">Daraz Cares</a></li>
+            <li><a href="#">dMart</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Daraz App</a></li>
+            <li><a href="#">Daraz Exclusive</a></li>
+            <li><a href="#">Hungrynaki Food Delivery</a></li>
+            <li><a href="#">BD Cricket Live</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-6 app_download">
+          <img src="img/daraz_app_download_qr_code.png" alt="QR Code" class="qr_for_app">
+          <div class="item">
+            <img src="img/fav.png" alt="logo">
+            <h6>Happy Shopping</h6>
+            <h6 class="text-white">Download App</h6>
+          </div>
+          <ul>
+            <li><a href="#"><img src="img/app_download_google_play.png" alt="Google Play" width="100%"></a></li>
+            <li><a href="#"><img src="img/app_download_app_store.png" alt="App Store" width="100%"></a></li>
+            <li><a href="#"><img src="img/app_download_app_gallery.png" alt="App Gallery" width="100%"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer payments -->
+  <div id="footer_payments">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Payment Methods</h5>
+          <img src="img/payment_gateway.png" alt="payment gateway" width="90%">
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Daraz International</h5>
+          <img src="img/flags.png" alt="International Marketplace" width="70%">
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Follow Us</h5>
+          <ul>
+            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 p-2">
+          <h5>Verified by</h5>
+          <img src="img/pci_dss_logo.png" alt="pci dss logo" width="50%">
+        </div>
+      </div>
+      <h5><i class="bi bi-c-circle"></i> 2022 - <span style="color: #19B2D7; font-weight: 500;">Daraz</span> | Design and Developed by <a href="https://facebook.com/j.shahinalam" target="_blank" style="color: #f57224; font-weight: 500;">Shahin Alam</a></h5>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
