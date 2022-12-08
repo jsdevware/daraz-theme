@@ -3,7 +3,7 @@ if(!productsInCart){
 	productsInCart = [];
 }
 const parentElement = document.querySelector('#buyItems');
-const cartSumPrice = document.querySelector('#sum-prices');
+const cartActivation = document.querySelector('#cart_activation');
 const products = document.querySelectorAll('.product-under');
 
 // this codes for add cart list
@@ -27,12 +27,10 @@ const updateShoppingCartHTML = function () {  // 3
 					`
 		});
 		parentElement.innerHTML = result.join('');
-		cartSumPrice.innerHTML = '$' + countTheSumPrice();
-
 	}
 	else {
 		parentElement.innerHTML = '<h4 class="empty">Your cart is empty </br> <a href="categories.html"><i class="bi bi-bag-heart-fill"></i> Shop Now</a></h4>';
-		cartSumPrice.innerHTML = '';
+
 	}
 }
 
@@ -69,8 +67,6 @@ products.forEach(item => {   // 1
 		}
 	});
 });
-
-
 
 
 // this codes for increament and decreament products and prices

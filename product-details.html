@@ -44,13 +44,14 @@
       <!-- codes for login popup section -->
 <div id="login_modal">
     <div class="modal_box">
-        <h5>Welcome to Daraz! Please login. <span title="Close" class="float-end bi bi-x-lg btn p-0" onclick="document.querySelector('#login_modal').style.display='none';"></span></h5>
+        <h6 title="Close" class="float-end bi bi-x-lg btn p-0 ms-3" onclick="document.querySelector('#login_modal').style.display='none';"></h6>
+        <h5>Welcome to Daraz! Please login.</h5>
         <span>New member? <a href="#">Register</a> here.</span>
         <div class="login_box">
             <form action="" id="login_form">
                 <div class="row">
                 <!-- input boxes -->
-                <div class="col-6 p-2">
+                <div class="col-md-6 p-2">
                     <label for="phone_mail">Phone Number or Email*</label>  <br>
                     <div class="item">
                     <input type="text" name="phone_mail" id="phone_mail" placeholder="Please enter your Phone Number or Email" required>
@@ -74,7 +75,7 @@
                         </script>
                 </div>
                 <!-- submit buttons -->
-                <div class="col-6 p-4">
+                <div class="col-md-6 p-4">
                     <div class="slide-submit">
                     <div class="slide-submit-text">Slide to Submit</div>
                     <div class="slide-submit-thumb">»</div>
@@ -116,6 +117,14 @@
   </div>
 </div>
 
+      <!-- codes for mobile nav section -->
+<div id="mobile_nav">
+  <a href="index.html" class="mobile_nav_item"><i class="bi bi-house-door"></i></a>
+  <a href="categories.html" class="mobile_nav_item"><i class="bi bi-grid"></i></a>
+  <a href="cart.html" class="mobile_nav_item"><i class="bi bi-bag-heart"></i></a>
+  <a href="login.html" class="mobile_nav_item"><i class="bi bi-person"></i></a>
+</div>
+
       <!-- codes for header section -->
 <header>
   <div class="container">
@@ -123,26 +132,7 @@
     <div class="header_search_wrapper">
       <input type="search" name="search_product" id="search_product" placeholder="Search in Daraz">
       <div class="search_button" onclick="product_search()"><i class="bi bi-search"></i></div>
-      <!----
-          <script>
-            let cards = document.querySelectorAll('.box')
-    
-            function product_search() {
-              let search_query = document.getElementById("search_product").value;
-              
-              //Use innerText if all contents are visible
-              //Use textContent for including hidden elements
-              for (var i = 0; i < cards.length; i++) {
-                  if(cards[i].textContent.toLowerCase()
-                          .includes(search_query.toLowerCase())) {
-                      cards[i].classList.remove("is-hidden");
-                  } else {
-                      cards[i].classList.add("is-hidden");
-                  }
-                 }
-               };
-          </script>     -->
-    </div>
+     </div>
     <div class="cart_button" title="Cart">
       <span class="cart_quantity"></span>
       <a href="cart.html" class="bi bi-cart3"></a>
@@ -150,7 +140,7 @@
     <a href="javascript:void(0)" class="getApp"> <img src="img/app_banner.png" alt="App Banner" width="180px"> </a>
   </div>
   <div class="container position-relative">
-    <button class="cat_btn" onclick="document.querySelector('header #category').classList.toggle('show'); document.querySelector('header .cat_btn span').classList.toggle('bi-chevron-up');">Category <span class="bi bi-chevron-down ms-1"></span></button>
+    <button class="cat_btn" onclick="document.querySelector('header #category').classList.toggle('show');  document.querySelector('header .cat_btn span').classList.toggle('bi-chevron-up');">Category <span class="bi bi-chevron-down ms-1"></span></button>
       <!-- category section -->
     <div id="category">
         <div class="main_menu">
@@ -163,14 +153,14 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -179,12 +169,12 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -193,14 +183,14 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -209,11 +199,11 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -222,16 +212,16 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -240,9 +230,9 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -251,13 +241,13 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -266,12 +256,12 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 8</a></li>
-                        <li><a href="#">Link 8</a></li>
-                        <li><a href="#">Link 8</a></li>
-                        <li><a href="#">Link 8</a></li>
-                        <li><a href="#">Link 8</a></li>
-                        <li><a href="#">Link 8</a></li>
+                        <li><a href="categories.html">Link 8</a></li>
+                        <li><a href="categories.html">Link 8</a></li>
+                        <li><a href="categories.html">Link 8</a></li>
+                        <li><a href="categories.html">Link 8</a></li>
+                        <li><a href="categories.html">Link 8</a></li>
+                        <li><a href="categories.html">Link 8</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -287,15 +277,15 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -304,10 +294,10 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -316,18 +306,18 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -336,9 +326,9 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -347,14 +337,14 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -363,11 +353,11 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -383,11 +373,11 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -396,12 +386,12 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -410,9 +400,9 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -428,10 +418,10 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -440,12 +430,12 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -454,14 +444,14 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -470,11 +460,11 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -483,16 +473,16 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
+                        <li><a href="categories.html">Link 5</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -501,9 +491,9 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
+                        <li><a href="categories.html">Link 6</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -512,13 +502,13 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
+                        <li><a href="categories.html">Link 7</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -534,14 +524,14 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
+                        <li><a href="categories.html">Link 1</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -550,12 +540,12 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
+                        <li><a href="categories.html">Link 2</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -564,14 +554,14 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
+                        <li><a href="categories.html">Link 3</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -580,11 +570,11 @@
                         <!-- links -->
                     <div class="links">
                         <ul>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
+                        <li><a href="categories.html">Link 4</a></li>
                         </ul>
                     </div> <!-- end links -->
                     </li>
@@ -621,8 +611,8 @@
     <div class="container">
         <div class="details_wrapper">
             <div class="row product-under">
+                <!-- album -->
                 <div class="col-md-3 p-2">
-                    <!-- album -->
                     <div class="album">
                         <img class="productImg" src="img/just4u/2.jpg" alt="Sunglass" width="100%" height="100%">
                         <hr>
@@ -949,7 +939,7 @@
 <section id="combo">
     <div class=" container combo_wrapper">
         <div class="title">
-            <div class="d-flex">
+            <div class="d-flex flex-wrap">
                 <h6>18 Combo (count, plural, one other)</h6>
                 <span style="color: #f57224; align-self: center;">SAVE UP TO ৳ 25</span>
             </div>
@@ -1000,7 +990,7 @@
                 <div class="d-flex p-3 flex-wrap">
                     <div>
                         <h6>Total : ৳ 459</h6>
-                        <h4>Combo Price : ৳ 400 <span class="h6 ms-3 text-muted">save ৳ 59</span></h4>
+                        <h4 class="d-flex flex-wrap"><span>Combo Price : ৳ 400</span> <span class="h6 ms-3 text-muted">save ৳ 59</span></h4>
                     </div>
                     <button>ADD 2 (count, plural, one other) TO CART</button>
                 </div>
@@ -1099,10 +1089,8 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="d-flex">
-                        <p style="width: 50%; color: #0d7494; align-self: center;">What's in the box</p>
-                        <p>Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses Travel Best Glass New Classic Super Shephera Best Design Fashion Glasses UNisx UV Protection Best Sunglasses</p>
-                    </div>
+                    <p style="color: #0d7494;">What's in the box</p>
+                    <p>Stylist Polarized New Premium Quality Men Sunglasses Best Black Vision Driving Sunglasses Travel Best Glass New Classic Super Shephera Best Design Fashion Glasses UNisx UV Protection Best Sunglasses</p>
                 </div>
 
                 <!-- codes for rating section -->
@@ -1219,7 +1207,7 @@
                         </div>
                         <div class="review_text">
                             <p>ভালো দিক : প্যাকিং + পণ্যের মান ভালো লাগছে। ডেলিভারি ও ব্যবহার মার্জিত।</p>
-                            <p>সমস্যা : ভেবেছিলাম ডার্ক কালো লেন্স পাবো বাট আসছে ডার্ক ব্লু। তবুও কম্প্লেইন নেই। ওভারঅল ভালোই।</p>
+                            <p>সমস্যা : ভেবেছিলাম dark black লেন্স পাবো বাট আসছে dark blue. তবুও কম্প্লেইন নেই। ওভারঅল ভালোই।</p>
                             <p>বক্সটা দিলো না😘🤣</p>
                         </div>
                         <div class="review_images">
@@ -1228,7 +1216,7 @@
                             <img src="img/just4u/9.jpg" alt="Sunglass">
                             <img src="img/just4u/10.jpg" alt="Sunglass">
                         </div>
-                        <div class="my-3 text-muted">Lens Color : BLACK , Frame Color : BLACK</div>
+                        <div class="my-3 text-muted">Lens Color: Black , Frame Color: Black</div>
                         <button class="h6 bi bi-hand-thumbs-up-fill" onclick="like_review1()"> <span class="review_like_count">182</span></button>
                                     <script>
                                         // codes for like the review
@@ -1299,7 +1287,7 @@
                             <img src="img/just4u/10.jpg" alt="Sunglass">
                             <img src="img/just4u/3.jpg" alt="Sunglass">
                         </div>
-                        <div class="my-3 text-muted">Lens Color : BLACK , Frame Color : BLACK</div>
+                        <div class="my-3 text-muted">Lens Color: Black , Frame Color: Black</div>
                         <button class="h6 bi bi-hand-thumbs-up-fill" onclick="like_review2()"> <span class="review_like_count">23</span></button>
                                     <script>
                                         // codes for like the review
@@ -1433,7 +1421,7 @@
                 <!-- codes for most view -->
                 <div class="most_view mb-4">
                     <div class="title">People Who Viewed This Item Also Viewed</div>
-                    <div class="d-flex">
+                    <div class="d-flex flex-wrap">
                         <div class="item">
                             <a href="#">
                                 <img src="img/just4u/1.jpg" alt="Sunglass">

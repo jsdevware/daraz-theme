@@ -31,6 +31,10 @@ button {border: none; background: none;}
 #topBar .app_banner p {color: tomato; align-self: center; margin: 0; padding: 5px; font-size: 10px;}
 #topBar .app_banner a {background: tomato; color: #fff; padding: 5px 10px; border-radius: 20px; align-self: center; font-size: 10px;}
 
+/* codes for mobile nav section */
+#mobile_nav {position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #F57224; display: none; justify-content: space-around; font-size: 20px; z-index: 15;}
+#mobile_nav .mobile_nav_item {color: #F57224; align-self: center; margin: 10px;}
+
             /* codes for header section */
 header {background: #fff; position: sticky; left: 0; top: 0; box-shadow: 0 2px 5px #ddd; z-index: 10;}
 header .container {display: flex; justify-content: space-between;}
@@ -62,12 +66,12 @@ header #category .main_menu ul li .sub_menu ul li .links ul li a {color: #333;}
 header #category .main_menu ul li .sub_menu ul li .links ul li a:hover {color: tomato;}
 
             /* codes for main section */
-#counter_wrapper {background: #fff; position: sticky; left: 0; top: 94px; z-index: 10; border-bottom: 1px solid #eee;}
+#counter_wrapper {background: #fff; position: sticky; left: 0; top: 94px; z-index: 9; border-bottom: 1px solid #eee;}
 #counter_wrapper b {margin: 0 50px; align-self: center; font-size: 40px; color: #eee;}
 #counter_wrapper a.tab_link {color: #aaa; align-self: center; padding: 16px 0; font-size: initial; border-bottom: 3px solid transparent;}
 #counter_wrapper a.tab_link.active {color: #F57224; border-color: #F57224;}
 #counter_wrapper .counter {display: flex; align-self: center;}
-#counter_wrapper .counter .counterDown .item {font-size: 20px;  color: #fff;  background: #F57224;  border-radius: 3px;  padding: 5px 0; text-align: center; margin: 10px; width: 40px; height: 40px; display: inline-block;}
+#counter_wrapper .counter .counterDown .item {font-size: 20px;  color: #fff;  background: #F57224;  border-radius: 3px; padding: 5px 0; text-align: center; margin: 10px; width: 40px; height: 40px; display: inline-block;}
 
             /* codes for on sale tab section */
 #on_sale_tab .title {color: #199CC4; padding: 10px 0; font-size: 25px;}
@@ -133,4 +137,20 @@ header .getApp {display: none;}
 #on_sale_tab .product_wrapper .product {width: 32%;}
 #tomorrow_sale_tab .product_wrapper .product {width: 32%;}
     
+}
+
+@media screen and (max-width: 500px) {
+ 
+#message_box_wrapper {display: none;}
+#mobile_nav {display: flex;}
+header .cart_button {display: none;}
+header .cat_btn {display: none;}
+#counter_wrapper {top: 60px;}
+#counter_wrapper b {display: none;}
+#counter_wrapper a.tab_link {display: none;}
+#counter_wrapper .counter .counterDown .item {width: 35px; height: 36px; padding: 4px 0;}
+#on_sale_tab .product_wrapper .product {width: 49%;}
+#tomorrow_sale_tab .product_wrapper .product {width: 49%;}
+footer {padding-bottom: 25px;}
+
 }

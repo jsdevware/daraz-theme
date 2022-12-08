@@ -52,6 +52,10 @@ section {padding: 25px 0;}
 #topBar .app_banner p {color: tomato; align-self: center; margin: 0; padding: 5px; font-size: 10px;}
 #topBar .app_banner a {background: tomato; color: #fff; padding: 5px 10px; border-radius: 20px; align-self: center; font-size: 10px;}
 
+/* codes for mobile nav section */
+#mobile_nav {position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #F57224; display: none; justify-content: space-around; font-size: 20px; z-index: 15;}
+#mobile_nav .mobile_nav_item {color: #F57224; align-self: center; margin: 10px;}
+
             /* codes for header section */
 header {background: #fff; position: sticky; left: 0; top: 0; box-shadow: 0 2px 5px #ddd; z-index: 10;}
 header .container {display: flex; justify-content: space-between;}
@@ -108,10 +112,10 @@ ul.breadcrumb li a {color: #199CC4;}
 /* voucher */
 #product_details .details_wrapper .voucher_wrapper {display: flex; margin-top: 20px; position: relative;}
 #product_details .details_wrapper .voucher_wrapper button.voucher_button {margin-left: 20px; font-size: 14px; background: #F57224; color: #fff; padding: 0 10px; position: relative;}
-#product_details .details_wrapper .voucher_wrapper button.voucher_button::after {position: absolute;    top: 0;    right: -9px;    display: inline-block;    content: "";    border-color: #ff9800 transparent; border-style: solid; border-width: 13.7px 9px;}
+#product_details .details_wrapper .voucher_wrapper button.voucher_button::after {position: absolute; top: 0; right: -9px; display: inline-block; content: ""; border-color: #ff9800 transparent; border-style: solid; border-width: 13.7px 9px;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper::-webkit-scrollbar {display: none;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper.show {display: block;}
-#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper {position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 0 10px #ddd; width: 100%; padding: 20px; height: 400px; overflow: scroll; display: none;}
+#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper {position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 0 10px #ddd; width: 100%; padding: 20px; height: 400px; overflow: scroll; display: none; z-index: 1;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card {display: flex; background: #FEFBF5; border: 1px solid orange; border-radius: 10px; position: relative; justify-content: space-between; margin-top: 15px;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card::before {content: ""; background: #fff; width: 14px; height: 14px; position: absolute; left: 21%; top: -10px; border: 1px solid; border-color: orange transparent transparent orange; transform: rotate(225deg); border-radius: 50%;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card::after {content: ""; background: #fff; width: 14px; height: 14px; position: absolute; left: 21%; bottom: -10px; border: 1px solid; border-color: orange orange transparent transparent; transform: rotate(-45deg); border-radius: 50%;}
@@ -119,9 +123,9 @@ ul.breadcrumb li a {color: #199CC4;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card .item:last-child {padding: 10px; display: flex; justify-content: space-between; width: 75%; font-size: 15px; align-self: center;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card .item:last-child h6 {color: #F57224; font-size: 22px;}
 #product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card .item:last-child .date {color: gray; font-size: 14px;}
-#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card .item:last-child button.collect {color: #fff; background: #F57224; padding: 5px 10px; border-radius: 4px; align-self: center;}
+#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card .item:last-child button.collect {color: #fff; background: #F57224; padding: 5px 10px; border-radius: 4px; align-self: center; margin: 10px 0;}
 /* buttons */
-#product_details .details_wrapper .bottomBtns {display: flex; justify-content: space-between; margin-top: 20px;}
+#product_details .details_wrapper .bottomBtns {display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap;}
 #product_details .details_wrapper .bottomBtns button {background: #26ABD4; width: 48%; color: #fff; font-size: 18px; padding: 8px;}
 #product_details .details_wrapper .bottomBtns button.addToCart {background: #F57224;}
 /* delivery */
@@ -141,14 +145,14 @@ ul.breadcrumb li a {color: #199CC4;}
 #product_details .details_wrapper .standard_delivery .bottom {width: 90%; margin-top: 10px; background: #fff; padding: 5px; border-bottom: 1px solid #ddd; margin-left: 10%;}
 
             /* codes for combo section */
-#combo .title {display: flex; justify-content: space-between; background: #f9f9f9; padding: 15px 0;}
+#combo .title {display: flex; flex-wrap: wrap; justify-content: space-between; background: #f9f9f9; padding: 15px 0;}
 #combo .title h6 {background: #F57224; color: #fff; padding: 4px 15px; position: relative; margin: 0 20px 0 0;}
 #combo .title h6::after {position: absolute;    top: 0;    right: -9px;    display: inline-block;    content: "";    border-color: #ff9800 transparent; border-style: solid; border-width: 13.7px 9px;}
 #combo .buttons {align-self: center; margin: 0 15px; font-size: 18px;}
 #combo .slider_wrapper {background: #fff;}
 #combo .slider_wrapper .slider_item {display: none;}
 #combo .slider_wrapper .slider_item.active {display: block;}
-#combo .slider_wrapper .slider_item ul {display: flex; padding: 20px;}
+#combo .slider_wrapper .slider_item ul {display: flex; padding: 20px; width: 100%; overflow: scroll;}
 #combo .slider_wrapper .slider_item ul li {align-self: center; width: 150px;}
 #combo .slider_wrapper .slider_item ul li.icon {width: 50px; color: #aaa;}
 #combo .slider_wrapper .slider_item ul li h1 {text-align: center;}
@@ -161,16 +165,16 @@ main .star {color: #ffd100;}
 
             /* codes for product description section */
 main .product_desc {background: #fff; padding: 20px;}
-main .product_desc .lists {display: flex; margin-top: 20px;}
+main .product_desc .lists {display: flex; margin-top: 20px; flex-wrap: wrap;}
 main .product_desc .lists ul {list-style-type: disc; margin: 0 25px;}
 
             /* codes for rating section */
 main .rating_wrapper {background: #fff; margin-top: 20px;}
 main .rating_wrapper .title h6 {background: #f9f9f9; padding: 10px 20px; color: #0d7494;}
-main .rating_wrapper .ratings {display: flex;}
+main .rating_wrapper .ratings {display: flex; flex-wrap: wrap;}
 main .rating_wrapper .ratings .left {padding: 20px;}
 main .rating_wrapper .ratings .right {padding: 30px}
-main .rating_wrapper .ratings .right ul {display: flex;}
+main .rating_wrapper .ratings .right ul {display: flex; white-space: nowrap;}
 main .rating_wrapper .ratings .right ul li .range_wrapper {width: 150px; height: 50%; background: #eee; margin: 5px 15px; position: relative;}
 main .rating_wrapper .ratings .right ul li .range_wrapper .range {height: 100%; background: #ffd100; position: absolute; top: 0; left: 0;}
 
@@ -185,8 +189,8 @@ main .review_wrapper .title .right h6 select {border: none; background: none; ou
 /* review inner */
 main .review_wrapper .review_inner {padding: 20px;}
 main .review_wrapper .review_inner .buyer {color: #4caf50; margin-bottom: 10px;}
-main .review_wrapper .review_inner .review_images {display: flex;}
-main .review_wrapper .review_inner .review_images img {width: 120px; margin-right: 15px; border: 1px solid #eee;}
+main .review_wrapper .review_inner .review_images {display: flex; flex-wrap: wrap;}
+main .review_wrapper .review_inner .review_images img {width: 110px; margin-right: 15px; border: 1px solid #eee;}
 main .review_wrapper .review_inner .bi-hand-thumbs-up-fill.blue {color: #24a0ed;}
 main .review_wrapper .review_inner .review_menu {float: right; position: relative;}
 main .review_wrapper .review_inner .review_menu ul.menu_inner.show {display: block;}
@@ -255,12 +259,29 @@ main .most_view .item h4 {color: #F57224;}
 #topBar ul {display: none;}
 #topBar .app_banner {display: flex;}
 header .getApp {display: none;}
-main .most_view .item {width: 25%;}
     
 }
 
+@media screen and (max-width: 500px) {
+ 
+#message_box_wrapper {display: none;}
+#mobile_nav {display: flex;}
+header .cart_button {display: none;}
+header .cat_btn {display: none;}
+#product_details .details_wrapper .rate_share .share_fav .social {width: 220px;}
+#product_details .details_wrapper .rate_share .share_fav .social span {display: none;}
+#product_details .details_wrapper .rate_share .share_fav .social a {margin: 0 5px;}
+#product_details .details_wrapper .bottomBtns {justify-content: center;}
+#product_details .details_wrapper .bottomBtns button {width: 60%; margin: 10px 0;}
+#product_details .details_wrapper .voucher_wrapper .voucher_card_wrapper .voucher_card .item:last-child {flex-wrap: wrap;}
+main .rating_wrapper .ratings .right ul li .range_wrapper {width: 100px;}
+main .review_wrapper .title {flex-wrap: wrap;}
+main .review_wrapper ul.pagination {padding: 0 10px 20px;}
+main .review_wrapper ul.pagination li {width: 24px; height: 24px; padding: 0; font-size: 14px;}
+main .qa_sarah ul.pagination {padding: 10px;}
+main .qa_sarah ul.pagination li {width: 24px; height: 24px; padding: 0; font-size: 14px;}
+main .most_view .item {width: 100%; margin: 10px 0; display: block;}
 
+footer {padding-bottom: 25px;}
 
-@media screen and (max-width: 750px) {
-    body {display: block;}
 }

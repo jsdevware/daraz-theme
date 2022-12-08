@@ -31,6 +31,10 @@ button {border: none; background: none;}
 #topBar .app_banner p {color: tomato; align-self: center; margin: 0; padding: 5px; font-size: 10px;}
 #topBar .app_banner a {background: tomato; color: #fff; padding: 5px 10px; border-radius: 20px; align-self: center; font-size: 10px;}
 
+/* codes for mobile nav section */
+#mobile_nav {position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #F57224; display: none; justify-content: space-around; font-size: 20px; z-index: 15;}
+#mobile_nav .mobile_nav_item {color: #F57224; align-self: center; margin: 10px;}
+
             /* codes for header section */
 header {background: #fff; position: sticky; left: 0; top: 0; box-shadow: 0 2px 5px #ddd; z-index: 10;}
 header .container {display: flex; justify-content: space-between;}
@@ -91,4 +95,14 @@ main img {width: 100%;}
 #topBar .app_banner {display: flex;}
 header .getApp {display: none;}
     
+}
+
+@media screen and (max-width: 500px) {
+ 
+#message_box_wrapper {display: none;}
+#mobile_nav {display: flex;}
+header .cart_button {display: none;}
+header .cat_btn {display: none;}
+footer {padding-bottom: 25px;}
+
 }

@@ -46,13 +46,13 @@ header .sidebar_wrapper .sidebar .blank {width: 100%; height: 100%;}
 header .sidebar_wrapper .sidebar .box {min-width: 350px; height: 100%; color: #fff; background: #111; padding: 20px;}
 header .sidebar_wrapper .sidebar .box a {display: flex; color: #C2FFF9; margin-bottom: 30px;}
 header .sidebar_wrapper .sidebar .box a:hover {color: #fff;}
-header .sidebar_wrapper .sidebar .box a img {width: 100px; padding: 5px;}
+header .sidebar_wrapper .sidebar .box a img {width: 100px; padding: 5px; align-self: center;}
 header .sidebar_wrapper .sidebar .box a h6 {padding: 5px;}
 
             /* codes for explore section */
 #explore .topbar {background: #f3f3f9; display: flex; margin-bottom: 20px;}
-#explore .topbar h6 {color: #fff; background: #F57224; padding: 15px 20px; margin: 0;}
-#explore .topbar a {color: #F57224; align-self: center; margin-left: 20px;}
+#explore .topbar h6 {color: #fff; background: #F57224; padding: 15px 20px; margin: 0; align-self: center;}
+#explore .topbar a {color: #F57224; align-self: center; margin-left: 20px; padding: 5px;}
 
             /* codes for dual box section */
 #dual_box {background: #f8f8f8;}
@@ -79,5 +79,15 @@ footer ul li a:hover {color: #F57224;}
 @media screen and (max-width: 768px) {
  
 header ul.menu li {font-size: 14px; padding: 0 9px;}
+    
+}
+
+@media screen and (max-width: 500px) {
+ 
+#topBar #MyClockDisplay {font-size: 20px;}
+header ul.menu {display: none;}
+header .sidebar_wrapper .sidebar .box {min-width: 300px;}
+#dual_box .banner a {height: 100%; padding: 5px;}
+footer img {width: 80%; margin-bottom: 50px;}
     
 }

@@ -11,7 +11,7 @@ section {padding: 25px 0 0;}
 button {border: none; background: none;}
 
             /* codes for alert box */
-#alert_box {width: 25%; box-shadow: 0 0 10px #ddd; border-radius: 0 0 10px 10px; position: fixed; top: 0; left: 10%; overflow: hidden; background: #fff; z-index: 11;}
+#alert_box {width: 25%; box-shadow: 0 0 10px #ddd; border-radius: 0 0 10px 10px; position: fixed; top: 0; left: 10%; overflow: hidden; background: #fff; z-index: 16;}
 #alert_box.hide {display: none;}
 #alert_box .alerts {padding: 20px 10px; display: flex;}
 #alert_box .alerts .text {padding: 0 15px;}
@@ -36,6 +36,7 @@ button {border: none; background: none;}
             /* codes for topBar */
 #topBar ul {display: flex; padding: 5px 0; justify-content: end;}
 #topBar ul li a {padding: 10px; color: tomato;}
+#topBar .be_seller_banner button {position: absolute; right: 5px; top: 5px; font-size: 16px; color: #fff;}
 #topBar .app_banner {background: #f9f9f9; padding: 5px; justify-content: space-around; display: none;}
 #topBar .app_banner img {width: 30px; height: 30px; background: aqua; padding: 5px; border-radius: 5px; align-self: center;}
 #topBar .app_banner p {color: tomato; align-self: center; margin: 0; padding: 5px; font-size: 10px;}
@@ -44,7 +45,7 @@ button {border: none; background: none;}
 /* codes for mobile nav section */
 #mobile_nav {position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #F57224; display: none; justify-content: space-around; font-size: 20px; z-index: 15;}
 #mobile_nav .mobile_nav_item {color: #F57224; align-self: center; margin: 10px;}
-#mobile_nav .mobile_nav_active {font-size: 14px;box-shadow: 0 0 10px #bbb; padding: 5px 10px; border-radius: 10px;}
+#mobile_nav .mobile_nav_active {font-size: 14px; box-shadow: inset 0 0 10px #eee; padding: 5px 10px; border-radius: 10px;}
 
             /* codes for header section */
 header {background: #fff; position: sticky; left: 0; top: 0; box-shadow: 0 2px 5px #ddd; z-index: 10;}
@@ -99,8 +100,8 @@ header .cat_btn {padding: 0 10px 10px; display: none;}
 
             /* codes for flash sale */
 /* counter */
-#flash_sale .counter_wrapper {background: #fff; padding: 0 10px; border-bottom: 1px solid #ccc; display: flex;}
-#flash_sale .counter_wrapper span.title {color: tomato; align-self: center; padding: 0 10px;}
+#flash_sale .counter_wrapper {background: #fff; padding: 0 10px; border-bottom: 1px solid #ccc; display: flex; flex-wrap: wrap;}
+#flash_sale .counter_wrapper span.title {color: tomato; align-self: center; padding: 0 10px; margin: 10px 0;}
 #flash_sale .counter_wrapper .counter {display: flex; align-self: center; margin-left: 50px;}
 #flash_sale .counter_wrapper .counter .counterDown .item {font-size: 20px;  color: #fff;  background: #F57224;  border-radius: 3px;  padding: 5px 0; text-align: center; margin: 10px; width: 40px; height: 40px; display: inline-block;}
 #flash_sale .counter_wrapper a {color: tomato; border: 1px solid tomato; padding: 8px 10px; transition: all 0.3s; align-self: center; margin-left: auto;}
@@ -127,7 +128,7 @@ header .cat_btn {padding: 0 10px 10px; display: none;}
 #just4u .item .text .desc {height: 44px; overflow: hidden;}
 #just4u .item .text .price {color: #F57224; font-size: 20px;}
 #just4u .item .text .rating i {color: orange;}
-#just4u button.load_more {color: #fff; background: #F57224; border: 1px solid #F57224; padding: 5px; width: 25%; transition: all 0.3s;}
+#just4u button.load_more {color: #fff; background: #F57224; border: 1px solid #F57224; padding: 5px 50px; transition: all 0.3s;}
 #just4u button.load_more:hover {color: #F57224; background: none;}
 
             /* codes for footer section */
@@ -171,16 +172,27 @@ header .cat_btn {padding: 0 10px 10px; display: none;}
 #topBar .app_banner {display: flex;}
 header .getApp {display: none;}
 #cate_banner #category {width: 13%;}
-#cate_banner #banner {width: 80%;}
+#cate_banner #banner {width: 87%;}
 #cate_banner #banner .carousel .carousel-control-prev, .carousel .carousel-control-next {font-size: 20px;}
 #flash_sale .counter_wrapper .counter {margin: 0;}
 #sec_categories ul li {width: 25%;}
     
 }
 
-@media screen and (max-width: 600px) {
- 
+@media screen and (max-width: 500px) {
+
 #message_box_wrapper {display: none;}
 #mobile_nav {display: flex;}
-    
+#topBar .be_seller_banner button {top: 0;}
+header .cart_button {display: none;}
+.sticky_header .cat_btn {display: none;}
+#cate_banner #category {display: none;}
+#cate_banner #banner {width: 100%;}
+#quick_shop .cate_links a {width: 100%;}
+#flash_sale .counter_wrapper a {margin: 15px auto;}
+#flash_sale .counter_wrapper .counter .counterDown .item {font-size: 16px; padding: 5px 0; margin: 6px; width: 36px; height: 36px;}
+#sec_categories ul li {width: 50%;}
+#sec_categories ul li a img {height: 150px;}
+footer {padding-bottom: 25px;}
+
 }
