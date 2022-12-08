@@ -131,7 +131,7 @@ ul.breadcrumb li a {color: #199CC4;}
 /* delivery */
 #product_details .details_wrapper .delivery_location {padding: 20px 20px 0;}
 #product_details .details_wrapper .delivery_location .delivery_desc {position: relative;}
-#product_details .details_wrapper .delivery_location .delivery_desc span.bi-info-circle {cursor: pointer;}
+#product_details .details_wrapper .delivery_location .delivery_desc span.bi-info-circle {cursor: pointer; font-size: 18px;}
 #product_details .details_wrapper .delivery_location .delivery_desc .desc_box.show {display: block;}
 #product_details .details_wrapper .delivery_location .delivery_desc .desc_box {position: absolute; background: #fff; z-index: 1; top: 100%; right: 0; box-shadow: 0 0 10px #ddd; padding: 20px; width: 500px; display: none;}
 #product_details .details_wrapper .delivery_location .delivery_desc .desc_box .item {display: flex; margin-top: 10px;}
