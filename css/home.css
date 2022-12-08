@@ -108,10 +108,10 @@ header .cat_btn {padding: 0 10px 10px; display: none;}
 #flash_sale .counter_wrapper a:hover {background: tomato; color: #fff;}
 /* product */
 #flash_sale .product_wrapper {background: #fff; padding: 5px;}
-#flash_sale .product_wrapper a {color: #333;}
+#flash_sale .product_wrapper a {color: #333; display: block;}
 #flash_sale .product_wrapper a .desc {height: 44px; overflow: hidden;}
 #flash_sale .product_wrapper a .price {color: #F57224; font-size: 20px;}
-#flash_sale .product_wrapper .col-lg-2.col-md-4:hover {box-shadow: 0 0 5px #aaa;}
+#flash_sale .product_wrapper a:hover {box-shadow: 0 0 5px #aaa;}
 
             /* codes for categories  */
 #sec_categories ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
@@ -191,6 +191,7 @@ header .cart_button {display: none;}
 #quick_shop .cate_links a {width: 100%;}
 #flash_sale .counter_wrapper a {margin: 15px auto;}
 #flash_sale .counter_wrapper .counter .counterDown .item {font-size: 16px; padding: 5px 0; margin: 6px; width: 36px; height: 36px;}
+#flash_sale .product_wrapper a {border: 1px solid #eee;}
 #sec_categories ul li {width: 50%;}
 #sec_categories ul li a img {height: 150px;}
 footer {padding-bottom: 25px;}
